@@ -1,0 +1,8 @@
+import Solution
+import Consumer
+
+#check ShrinkingSpheres.coercivity
+#print axioms ShrinkingSpheres.coercivity
+#print axioms ShrinkingSpheres.uniform_physical_truncated_norm_comparison_closed
+#check ShrinkingSpheres.zero_energy_of_zero_output
+#print axioms ShrinkingSpheres.zero_energy_of_zero_output
