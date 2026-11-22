@@ -1393,6 +1393,7 @@
     "Proof/LocalMetricExtension/ODE/Analysis/ODE/InitialCondition.lean": "b97d4731171b3315f733a7c85fbc8bc52987362135c3c5aeaa0da5ac886a2d2c",
     "Proof/LocalMetricExtension/ODE/Analysis/ODE/SmoothParameter.lean": "e72a056a94757187520cfb83973b7bbfadc34e73d79915b0f774cc87ef7f23ae",
     "Proof/LocalMetricExtension/ODE/MeasureTheory/Integral/Cosh.lean": "1376a73bd7248727128e3dc9c4d8d83ab487445f676f163cf1abd569030e9cb3",
+    "Proof/Manuscript/AnisotropicUniqueness.lean": "1e3737b1ffd21861ee75efb9875b2072331934ed1e0caf40586b3c56f658b036",
     "Proof/PoissonFirstVariationBound.lean": "a413916e2d304bb449be5c2f693daa4bc4321ee567533e046e57a2854591f6f2",
     "Proof/PoissonTaylorDerivative.lean": "05452b543a68e4655e155a8575d2622a949ed21189377ad421f481fb8d889b0c",
     "Proof/PriorAnalysis/TauCeti/Analysis/Sobolev/Embedding.lean": "62c38cc01f81f682fe281a894eefbf3ccc04984d53eed0106f3d5c3b2f71c791",
@@ -1504,11 +1505,11 @@
     "Proof/ReleasedAnalysis/TauCeti/MeasureTheory/Integral/Bochner/Basic.lean": "4e508a6accd82f0d1a0e0cc6da93a6a5d9ac933a934772c2db0bac00f6b08860",
     "Proof/ReleasedAnalysis/TauCeti/MeasureTheory/Integral/Lebesgue/DominatedConvergence.lean": "4a811ee699e365102df4f008ee819226a0c1649e5bc767274e361510447d8bb2",
     "Proof/ReleasedAnalysis/TauCeti/Topology/Instances/ENNReal.lean": "93d7412ba0740db903b66e420b4bef4080366b7ba2f531a112103c2b7098861e",
-    "Proof/ReleasedAnalysis/TauCeti/Topology/MetricSpace/Lipschitz/Basic.lean": "f2b0cb6e4a9cc8fa5b386c0e6c97884ba19542e2eb17698e42dd9995d6c7b6c7",
-    "Solution.lean": "1e3737b1ffd21861ee75efb9875b2072331934ed1e0caf40586b3c56f658b036"
+    "Proof/ReleasedAnalysis/TauCeti/Topology/MetricSpace/Lipschitz/Basic.lean": "f2b0cb6e4a9cc8fa5b386c0e6c97884ba19542e2eb17698e42dd9995d6c7b6c7"
   },
   "relocated": {
-    "Proof/CalderonN/CheckedLocalExtension.lean": "Local Solution.lean, byte-identical"
+    "Proof/CalderonN/CheckedLocalExtension.lean": "Local Solution.lean, byte-identical",
+    "Proof/Manuscript/AnisotropicUniqueness.lean": "Global Solution.lean, byte-identical"
   },
   "consumer_wrapper": {
     "Applications/Local.lean": "Local Consumer.lean with its Solution import redirected."

@@ -2,17 +2,17 @@
 
 **Project authors: Cătălin I. Cârstea and Lauri Oksanen.**
 
-This Lean package formalizes the two theorems, all 12 numbered lemmas, and all eight numbered propositions in the selected edition of OpenAI's *Smooth anisotropic uniqueness in the Calderón problem from one boundary patch*. The uniqueness, local extension, and coercivity results check in every dimension `n ≥ 3`. The frozen Lean statements give the exact hypotheses for each result. Theorem 1.1 applies Theorem 3.1 at a touching ball. Theorem 3.1 uses Proposition 5.3 in that same dimension. [Selected manuscript and translations](docs/statement/README.md)
+This package formalizes every numbered result in the September 24, 2026 edition of OpenAI’s *Smooth anisotropic uniqueness in the Calderón problem from one boundary patch*. The 24 results include two theorems, two corollaries, 12 lemmas, and eight propositions. [Selected manuscript](docs/statement/README.md)
 
-Use `import Solution` for Theorem 1.1 and `import Proof.CalderonN.CheckedLocalExtension` for the two local results.
-
-Theorem 1.1 expresses the measured data as equality of smooth Dirichlet energies for traces supported in the open patch. It produces a smooth diffeomorphism that fixes every point of the patch and pulls back the first metric to the second. Theorem 3.1 uses the two Dirichlet Green kernels in their common harmonic chart. Proposition 5.3 controls the four-term energy of smooth sphere-mean-zero tests by the actual moving trace, uniformly over the admitted metrics and radius profiles. [Proof guide](docs/PROOF_GUIDE.md)
+The index links each Lean proof to its frozen statement and individual comparator. The development covers boundary determination, continuation, the global uniqueness theorem, and its full-boundary and scalar consequences. [Proof guide](docs/PROOF_GUIDE.md)
 
 ## Manuscript statements
 
 | Manuscript statement | Lean declaration | Frozen statement | Comparator configuration |
 | --- | --- | --- | --- |
-| Theorem 1.1, Smooth anisotropic uniqueness from one patch | [`CalderonPatch.smoothAnisotropicUniqueness`](Solution.lean) | [Statement](ComparatorChallenges/Theorem11.lean) | [`Theorem11.json`](ComparatorChallenges/Theorem11.json) |
+| Theorem 1.1, Smooth anisotropic uniqueness from one patch | [`CalderonPatch.smoothAnisotropicUniqueness`](Proof/Manuscript/AnisotropicUniqueness.lean) | [Statement](ComparatorChallenges/Theorem11.lean) | [`Theorem11.json`](ComparatorChallenges/Theorem11.json) |
+| Corollary 1.2, Full-boundary uniqueness | [`CalderonPaper.corollary12`](Proof/Manuscript/Corollary12.lean) | [Statement](ComparatorChallenges/Corollary12.lean) | [`Corollary12.json`](ComparatorChallenges/Corollary12.json) |
+| Corollary 1.3, Smooth scalar uniqueness from one patch | [`CalderonPaper.corollary13`](Proof/Manuscript/Corollary13.lean) | [Statement](ComparatorChallenges/Corollary13.lean) | [`Corollary13.json`](ComparatorChallenges/Corollary13.json) |
 | Lemma 2.1, Boundary jets | [`CalderonPaper.lemma21`](Proof/Manuscript/Lemma21.lean) | [Statement](ComparatorChallenges/Lemma21.lean) | [`Lemma21.json`](ComparatorChallenges/Lemma21.json) |
 | Proposition 2.2, Common cap and Green data | [`CalderonPaper.proposition22`](Proof/Manuscript/Proposition22.lean) | [Statement](ComparatorChallenges/Proposition22.lean) | [`Proposition22.json`](ComparatorChallenges/Proposition22.json) |
 | Lemma 2.3, Separation and finite harmonic jets | [`CalderonPaper.lemma23`](Proof/Manuscript/Lemma23.lean) | [Statement](ComparatorChallenges/Lemma23.lean) | [`Lemma23.json`](ComparatorChallenges/Lemma23.json) |
@@ -49,17 +49,14 @@ Allow at least a few hours for a first serial build and a full run of the compar
 
 ## Run the comparator challenges
 
-Choose a configuration from the [statement index](#manuscript-statements). The commands below show several examples.
+Choose any result in the [statement index](#manuscript-statements) and use its configuration in the comparator command.
 
 ```sh
 ./check-challenge.sh
-lake comparator --config ComparatorChallenges/Theorem11.json
-lake comparator --config ComparatorChallenges/Theorem31.json
-lake comparator --config ComparatorChallenges/Proposition53.json
-lake comparator --config ComparatorChallenges/Lemma21.json
+lake comparator --config ComparatorChallenges/Corollary13.json
 ```
 
-Each configuration checks one declaration against its frozen statement and the defining declarations it reaches. The challenge modules import their own frozen definition files under [`ComparatorChallenges/Frozen/`](ComparatorChallenges/Frozen/). Each has one intentional `sorry` at the target theorem. The ordinary proof build excludes the challenges. The comparator permits `propext`, `Quot.sound`, and `Classical.choice`, then replays the solution export in Lean's kernel. [Validation](docs/VALIDATION.md)
+The comparator checks the selected theorem type against its frozen statement, including the definitions the statement uses. It then replays the solution in Lean’s kernel with `propext`, `Quot.sound`, and `Classical.choice` permitted. The challenge source contains one intentional `sorry` for the target declaration. [Validation](docs/VALIDATION.md)
 
 ## License and citation
 

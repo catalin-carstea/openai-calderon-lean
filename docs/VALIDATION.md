@@ -2,7 +2,7 @@
 
 ## Original release
 
-The 1,496 proof and consumer sources from Leanflow check `bc163604` are byte-identical in this package. `Proof/CalderonN/CheckedLocalExtension.lean` is also byte-identical to the local solution of check `0d2e9641`. The local consumer uses that module path with the rest of its source unchanged. [Checked source hashes](provenance/checked-sources.json)
+The 1,496 proof and consumer sources from Leanflow check `bc163604` are reproduced byte for byte in this package. The original global solution now lives at `Proof/Manuscript/AnisotropicUniqueness.lean`, and `Solution.lean` re-exports it. `Proof/CalderonN/CheckedLocalExtension.lean` is also byte-identical to the local solution of check `0d2e9641`. The local consumer uses that module path with the rest of its source unchanged. [Checked source hashes](provenance/checked-sources.json)
 
 The validation used a fresh package checkout and the pinned Mathlib dependency cache. Lake rebuilt all 1,494 supporting modules, the global solution, and both consumer modules. The proof build completed with linter and deprecation warnings from the existing sources. It reported zero declarations using `sorry`. Each challenge was compiled separately with its one intentional open theorem.
 
@@ -22,4 +22,6 @@ The archive contains the sources, independent challenges, frozen references, and
 
 ## Standalone manuscript checks
 
-Every numbered lemma, proposition, and theorem in the selected edition has a separate comparator command. Each was checked against its frozen statement and accepted by Lean’s default kernel under the three permitted axioms. [Statement and configuration index](../README.md#manuscript-statements)
+The Theorem 1.1 comparator was rerun successfully after the proof moved to its shared module. It still checks through `Solution.lean`.
+
+Every numbered theorem, corollary, lemma, and proposition in the selected edition has a separate comparator command. Each was checked against its frozen statement and accepted by Lean’s default kernel under the three permitted axioms. [Statement and configuration index](../README.md#manuscript-statements)

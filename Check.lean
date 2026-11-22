@@ -1,3 +1,5 @@
+import Applications.Manuscript.Corollary12
+import Applications.Manuscript.Corollary13
 import Applications.Manuscript.Lemma21
 import Applications.Manuscript.Proposition22
 import Applications.Manuscript.Lemma23
@@ -49,6 +51,8 @@ import Applications.Local
 #print axioms CalderonN.zeroEnergyOfZeroOutput
 
 -- Standalone manuscript claims
+#print axioms CalderonPaper.corollary12
+#print axioms CalderonPaper.corollary13
 #print axioms CalderonPaper.lemma21
 #print axioms CalderonPaper.proposition22
 #print axioms CalderonPaper.lemma23
@@ -68,3 +72,7 @@ import Applications.Local
 #print axioms CalderonPaper.proposition71
 #print axioms CalderonPaper.proposition72
 #print axioms CalderonPaper.lemma81
+
+-- Corollary consumers
+#print axioms CalderonPaper.fullBoundaryFixesSpecifiedPoint
+#print axioms CalderonPaper.scalarConductivitiesAgreeAtBoundary
