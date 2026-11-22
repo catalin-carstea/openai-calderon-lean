@@ -1,5 +1,5 @@
 cff-version: 1.2.0
-message: "If you use or build upon this formalization, please cite Cătălin I. Cârstea and Lauri Oksanen; acknowledge bundled Tau Ceti code separately."
+message: "If you use or build upon this formalization, please cite Cătălin I. Cârstea and Lauri Oksanen and acknowledge the bundled upstream code."
 title: "OpenAI Calderón formalization in Lean"
 type: software
 license: BSD-3-Clause
@@ -9,4 +9,4 @@ authors:
   - family-names: "Oksanen"
     given-names: "Lauri"
 repository-code: "https://github.com/catalin-carstea/openai-calderon-lean"
-abstract: "Work toward a Lean formalization of the OpenAI anisotropic Calderón result. The completed component is Proposition 5.3 in dimension three: shrinking-sphere coercivity for arbitrary admitted metrics, frames and radius profiles."
+abstract: "Lean formalization of Theorem 1.1, Theorem 3.1, and Proposition 5.3 from OpenAI's smooth anisotropic Calderón manuscript for every dimension n ≥ 3."

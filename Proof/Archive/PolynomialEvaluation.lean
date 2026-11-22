@@ -1,9 +1,13 @@
-/- Selected evaluation-differentiation lemmas from the supplied GreenRadialTrace.lean. -/
-import Proof.Archive.HarmonicRaising
-import Mathlib.Analysis.Calculus.FDeriv.Prod
-import Mathlib.Analysis.Calculus.FDeriv.Mul
+module
+
+public import Proof.Archive.HarmonicRaising
+public import Mathlib.Analysis.Calculus.FDeriv.Prod
+public import Mathlib.Analysis.Calculus.FDeriv.Mul
 import Mathlib.Tactic
 
+@[expose] public section
+
+/- Selected evaluation-differentiation lemmas from the supplied GreenRadialTrace.lean. -/
 noncomputable section
 namespace OAI.AnisotropicCalderon.GreenRadialTrace
 open MvPolynomial

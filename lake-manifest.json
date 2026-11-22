@@ -111,7 +111,7 @@
       "configFile": "lakefile.toml"
     }
   ],
-  "name": "shrinking_spheres_coercivity",
+  "name": "openai_calderon_lean",
   "lakeDir": ".lake",
   "fixedToolchain": false
 }

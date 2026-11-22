@@ -9,9 +9,6 @@ acknowledges European Union funding through the European Research Council's
 The authors' views are their own; the funders and the European Union bear no
 responsibility for them.
 
-We thank the [Tau Ceti project](https://github.com/TauCetiProject/TauCeti) and
-its contributors for the analytic library used by this formalization. Their
-91 bundled source modules in `TauCeti/` are upstream work, with their original
-copyright and author notices intact. See
-[THIRD_PARTY_NOTICES.md](../THIRD_PARTY_NOTICES.md) for the pinned revision and
-license. We also acknowledge the Lean and Mathlib developers and contributors.
+We thank the Tau Ceti contributors for the analytic library, the conformal
+Poisson formalization authors for the adapted trace and boundary-layer work,
+and the Lean and Mathlib developers and contributors. [Third-party notices](../THIRD_PARTY_NOTICES.md)

@@ -1,0 +1,70 @@
+{
+  "repository": "https://github.com/openai/math",
+  "commit": "adc7f1241b42e322a6451854ab7e4b4c146bf78a",
+  "directory": "preprints/Smooth-Anisotropic-Uniqueness-in-the-Calderon-Problem-from-One-Boundary-Patch-September-24-2026",
+  "edition": "2026-09-24",
+  "leanflow_source": "openai-calderon-adc7f124.zip",
+  "leanflow_source_sha256": "561d9dad26ab539c25dfb2477740c407f85eef0456f9ad94663daacfc8ae5397",
+  "files": {
+    "README.md": {
+      "git_blob": "fcfc40c429c63a896b98c8af0284d48a3f380eb4",
+      "sha256": "440d4f60d7e3dc9b768ac21f46fc428f652ae0167a167a3557460c0d458b3489"
+    },
+    "build/figures/product-cross.tex": {
+      "git_blob": "83ba6e0371835d33d682d420984de4dc1616f675",
+      "sha256": "3bb605240be30f93941c2b5a0bba9620913508f21cff7fc582dc242ad4cccca9"
+    },
+    "build/figures/shrinking-functional.tex": {
+      "git_blob": "f1f7f8382b3fa9a82eb1a88a0df89c9d93ff5daa",
+      "sha256": "6f49877f3bfa1d5134645ce6e9aacd7bd14f062e7976e8543a7233680802d57f"
+    },
+    "build/paper.tex": {
+      "git_blob": "75ee05391953771e0712ca5c1bad83ead58b51e0",
+      "sha256": "abcb61cda68b10c366f9b8476576b09d9c157298521b9d620d917dc60364c6b6"
+    },
+    "build/preamble.tex": {
+      "git_blob": "ce04345226697b045980a6eaee0299cc302b958e",
+      "sha256": "1d8d56cadb11570486933077f3bf210857288ac450f801efcefeb920c3b9adfc"
+    },
+    "build/references.bib": {
+      "git_blob": "fafea8a547e81c3c15700e9740f59216a19515df",
+      "sha256": "d15b34e22018b4a4ff0ccdece992e0d16abec46d1882fba326a6c2cdba270ade"
+    },
+    "build/sections/01-introduction.tex": {
+      "git_blob": "ea062fa3408b3c280e75ba2ed451f9e8450964f8",
+      "sha256": "bfc7f8d4162dfb248f81c8f8dd092d74abd0787c1780f46c9853c2e22d0e1a4d"
+    },
+    "build/sections/02-boundary-data.tex": {
+      "git_blob": "4b0d341ba5b3e81478faad299b16b232a3758c20",
+      "sha256": "135961f7e045cb5ffe50fe39a5cc6cc5ea8a7fd9b368513d817b8a4716ec154e"
+    },
+    "build/sections/03-product-continuation.tex": {
+      "git_blob": "d4e6063a0545e128454a351ac57041f43e40440a",
+      "sha256": "425dafb59391a6de9f794fc757974468de553bdebed0e3411feaa7a2ff9a5608"
+    },
+    "build/sections/04-shrinking-balls.tex": {
+      "git_blob": "cfa972af88f1f7f310fb2fcfa361ab13a1ab7bcc",
+      "sha256": "51bb060d379a819d6ae7b50415b8926bfd3c9f273423b454411e90659283cd44"
+    },
+    "build/sections/05-angular-estimate.tex": {
+      "git_blob": "136f4cbd5068b42037ef99e994b8c7ab7cb176f5",
+      "sha256": "dee56e58ab1316aaebb7d53f48231658899ff07750fc7ab83f4cdd46ce3c1413"
+    },
+    "build/sections/06-bootstrap.tex": {
+      "git_blob": "665906f9d2815715a468d97f0b459a0ff0c8efb0",
+      "sha256": "c1456afb32ed8d2e8097ccc4e02827a67e179330387ddf86d986a82db8b0aaa4"
+    },
+    "build/sections/07-globalization.tex": {
+      "git_blob": "c027d23be63df9ed6c706ef312d61c0142a74a62",
+      "sha256": "e6a219823dda517be30448540edcca01086a190eeb3a4072d3092278ecc991bf"
+    },
+    "build/sections/08-scalar-consequence.tex": {
+      "git_blob": "a36285c0a7004901630b008655b1ec01dfb8757b",
+      "sha256": "55f6b4363f81d0f7ae589827a24c6bda7e196d4a577095410569fa3a997ce63b"
+    },
+    "paper.pdf": {
+      "git_blob": "2bac21775f17d92731570d7f603444f5d5d08fe6",
+      "sha256": "1ec46ed64206d12d8fdca42ae7454db52571c0ba1eb458aaf234a6ddea061d39"
+    }
+  }
+}

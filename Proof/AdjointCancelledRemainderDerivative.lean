@@ -1,4 +1,8 @@
-import Proof.PoissonTaylorDerivative
+module
+
+public import Proof.PoissonTaylorDerivative
+
+@[expose] public section
 
 noncomputable section
 set_option autoImplicit false

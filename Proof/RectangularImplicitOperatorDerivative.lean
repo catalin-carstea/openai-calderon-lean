@@ -1,6 +1,11 @@
-import Mathlib.Tactic
-import Mathlib.Analysis.Calculus.FDeriv.CompCLM
-import Mathlib.Topology.Algebra.Module.ContinuousLinearMap.Invertible
+module
+
+public import Mathlib.Tactic
+public import Mathlib.Analysis.Calculus.FDeriv.CompCLM
+import Mathlib.Analysis.Calculus.FDeriv.Congr
+public import Mathlib.Topology.Algebra.Module.ContinuousLinearMap.Invertible
+
+@[expose] public section
 
 noncomputable section
 set_option autoImplicit false

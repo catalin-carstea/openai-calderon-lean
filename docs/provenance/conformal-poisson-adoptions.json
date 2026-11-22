@@ -1,0 +1,923 @@
+{
+  "commit": "4cfcab036aedbb4f825a3aeb366da12fe5673ddd",
+  "files": [
+    {
+      "source": "Proof/FoundationSupplement/TauCeti/Analysis/Normed/Lp/GraphDomain.lean",
+      "source_sha256": "0cdfd2c6af7e3f4097dec683819003db66cd7b4ba431fc74d55f5aa90790f182",
+      "module": "Proof.ReleasedAnalysis.TauCeti.Analysis.Normed.Lp.GraphDomain",
+      "destination": "Proof/ReleasedAnalysis/TauCeti/Analysis/Normed/Lp/GraphDomain.lean",
+      "changes": [
+        "import module paths"
+      ],
+      "adopted_sha256": "0cdfd2c6af7e3f4097dec683819003db66cd7b4ba431fc74d55f5aa90790f182",
+      "license": "Apache-2.0"
+    },
+    {
+      "source": "Proof/FoundationSupplement/TauCeti/Analysis/Sobolev/Trace/Estimate.lean",
+      "source_sha256": "766b2adce704acbde47f40645487cae6a8d2a04f782d2910c22e0de3098704ed",
+      "module": "Proof.ReleasedAnalysis.TauCeti.Analysis.Sobolev.Trace.Estimate",
+      "destination": "Proof/ReleasedAnalysis/TauCeti/Analysis/Sobolev/Trace/Estimate.lean",
+      "changes": [
+        "import module paths"
+      ],
+      "adopted_sha256": "4f70b5ebd2e0eecdb275e90d6e9c1d6168b16d681a7172f66aaa1c7d6fd5ca4c",
+      "license": "Apache-2.0"
+    },
+    {
+      "source": "Proof/FoundationSupplement/TauCeti/Analysis/Sobolev/Trace/Hyperplane.lean",
+      "source_sha256": "efa617c6cf2625e83d02ca3c8d88e7ad0f4431a9079ed021cac038654e359b70",
+      "module": "Proof.ReleasedAnalysis.TauCeti.Analysis.Sobolev.Trace.Hyperplane",
+      "destination": "Proof/ReleasedAnalysis/TauCeti/Analysis/Sobolev/Trace/Hyperplane.lean",
+      "changes": [
+        "import module paths",
+        "import extracted norm-power identity"
+      ],
+      "adopted_sha256": "4b01c4e8a8546cb5728ddbf139c1881d41f3026e2f0ed9357c545cfade8e1e3c",
+      "license": "Apache-2.0"
+    },
+    {
+      "source": "Proof/FoundationSupplement/TauCeti/Analysis/Sobolev/Trace/HalfSpace.lean",
+      "source_sha256": "02824d67dc6e7d093aebb3565937025cedf274686eefc9eb15ebd1109c2db522",
+      "module": "Proof.ReleasedAnalysis.TauCeti.Analysis.Sobolev.Trace.HalfSpace",
+      "destination": "Proof/ReleasedAnalysis/TauCeti/Analysis/Sobolev/Trace/HalfSpace.lean",
+      "changes": [
+        "import module paths",
+        "import extracted norm-power identity"
+      ],
+      "adopted_sha256": "3d19520c2db5c96ffb719d85486c4f56f23e659c7cfa545d92f9028862ad86fa",
+      "license": "Apache-2.0"
+    },
+    {
+      "source": "Proof/FoundationSupplement/TauCeti/MeasureTheory/Function/Lp/Norm.lean",
+      "source_sha256": "6a3046c81f94b47e91bfae8bab20447d8196a62cb56604f7c9fe5afc40674e1a",
+      "module": "Proof.ReleasedAnalysis.TauCeti.MeasureTheory.Function.Lp.NormPower",
+      "destination": "Proof/ReleasedAnalysis/TauCeti/MeasureTheory/Function/Lp/NormPower.lean",
+      "changes": [
+        "extracted the integral norm-power theorem",
+        "adapted imports to pinned dependencies"
+      ],
+      "adopted_sha256": "d867e4ddecc0e0dc7247b464d5f5a3bdd70d4029291da257c8a94f305c1e1923",
+      "license": "Apache-2.0"
+    },
+    {
+      "source": "Solution.lean",
+      "components": [
+        {
+          "component": "DNProfileIntegration.lean",
+          "line": 80449,
+          "original_component_sha256": "4e79a98ed0dbbe065ec6ad78f1c945d8aad5021ca3c871b6a9481c9ce0e0c0fc"
+        },
+        {
+          "component": "DNPolynomialTransport.lean",
+          "line": 80548,
+          "original_component_sha256": "ebed0c8b461fb7c21b9dbb386a78ec213a1ede29e7a166f206971181cc49a46b"
+        },
+        {
+          "component": "DNPolynomialTraceMoment.lean",
+          "line": 80649,
+          "original_component_sha256": "11ab8a5db012099ee176d0e4fde400eec27452bb1188228f65c7813c9a57e5ef"
+        },
+        {
+          "component": "DNFixedDegreeTransport.lean",
+          "line": 80729,
+          "original_component_sha256": "c1b5c9db3851698082fa79f436e34d36b39ba5013b07f9264a4ab2f2e5b37681"
+        },
+        {
+          "component": "DNPolynomialCoefficientFamily.lean",
+          "line": 80800,
+          "original_component_sha256": "5628f8e6201ec32b03388840cefd90930942d283eca12200545958eab73ec854"
+        },
+        {
+          "component": "DNPolynomialFamilyReading.lean",
+          "line": 80909,
+          "original_component_sha256": "a39786d4214754d99dccb3b16dfcceeefcc4e3715385a952e877b23e532c68c0"
+        },
+        {
+          "component": "DNPolynomialSpatialDerivative.lean",
+          "line": 80962,
+          "original_component_sha256": "d2a038628ecbcc9569225a5fef9710badc81113087ff4f4c0bdd0f1f5639b1e1"
+        },
+        {
+          "component": "DNPolynomialProfile.lean",
+          "line": 81032,
+          "original_component_sha256": "ffa39c7b457dc2f85c53c1b73a2b74f82584a43ba37240d4bc30b34f7650a0f5"
+        },
+        {
+          "component": "DNProfileSpatialDerivative.lean",
+          "line": 81105,
+          "original_component_sha256": "136e8eee8c1d261bb4446728a2ae4f301f8c13f8c1d0d4f97eb0cb1ad0f6eef6"
+        }
+      ],
+      "module": "Proof.CalderonPatch.BoundaryLayerPolynomial",
+      "destination": "Proof/CalderonPatch/BoundaryLayerPolynomial.lean",
+      "changes": [
+        "assembled selected dimension-independent components",
+        "moved to the CalderonPatch.BoundaryLayer namespace",
+        "adapted imports, notation and transparency for the pinned Lean module interfaces"
+      ],
+      "adopted_sha256": "a01c73e470231f7ff694e34e29cda0ecc8559bff8963658c61ba48bb29126a13",
+      "license": "BSD-3-Clause"
+    },
+    {
+      "source": "Solution.lean",
+      "components": [
+        {
+          "component": "DNNativeLayerCoefficients.lean",
+          "line": 81296,
+          "original_component_sha256": "53a5d9983deffeee2d5b40d2faf99e3996e9381acf361ca1bf9fdc950fe38171"
+        },
+        {
+          "component": "DNTriangularLayerRecursion.lean",
+          "line": 81367,
+          "original_component_sha256": "76f2ab19a7f9cc0c19f7cdc37f6d3f01a7307d5afef90d042e2e88a02638ac71"
+        },
+        {
+          "component": "DNTriangularLayerEquation.lean",
+          "line": 81471,
+          "original_component_sha256": "1aa7272144365c855292165857ff292890a3c63af7413dcbd902dc3c6994988b"
+        },
+        {
+          "component": "DNLayerForcing.lean",
+          "line": 81540,
+          "original_component_sha256": "531244429c8bd0a1cb0153ff1bd099134e566c8256a1563c86f721b0eb564a1b"
+        },
+        {
+          "component": "DNLayerForcingRegular.lean",
+          "line": 81605,
+          "original_component_sha256": "b32f63d7ae24f6c295359419ac15ad0cbc1a2da90f3175373ce09c1b7f6ad540"
+        },
+        {
+          "component": "DNLayerForcingDegree.lean",
+          "line": 81713,
+          "original_component_sha256": "6a736c3f95d01996104d0ecf29119d0743a6676113d8b1d703eb8596bc87803b"
+        },
+        {
+          "component": "DNCompactProfileFamily.lean",
+          "line": 81820,
+          "original_component_sha256": "f9252baf7acab57245302ee6d0f96b453a578c9775a7efa01362772399d81187"
+        },
+        {
+          "component": "DNFiniteLayerProfiles.lean",
+          "line": 81887,
+          "original_component_sha256": "db0d204a3667bdbe7b6b51f5fed11769564c730e77326baa18443498d613fb43"
+        }
+      ],
+      "module": "Proof.CalderonPatch.BoundaryLayerProfiles",
+      "destination": "Proof/CalderonPatch/BoundaryLayerProfiles.lean",
+      "changes": [
+        "assembled selected dimension-independent components",
+        "moved to the CalderonPatch.BoundaryLayer namespace",
+        "adapted imports, notation and transparency for the pinned Lean module interfaces"
+      ],
+      "adopted_sha256": "7f72bfe97fbb731c3c2c9114949fc86a0e606f09862c2f60771088b571b368ad",
+      "license": "BSD-3-Clause"
+    },
+    {
+      "source": "Solution.lean",
+      "components": [
+        {
+          "component": "DNPolynomialProfileBounds.lean",
+          "line": 82014,
+          "original_component_sha256": "e69a03af3986abe02f28e16aa219c6c7a92a03815c6fc1f1fea607ae380bb6f7"
+        },
+        {
+          "component": "DNProfileTailBounds.lean",
+          "line": 82129,
+          "original_component_sha256": "c8c86871d412a8635d53feb2d564dc7bcaff80e9dbab37539e750f8a4df10e58"
+        },
+        {
+          "component": "DNFiniteOscillatoryWave.lean",
+          "line": 82212,
+          "original_component_sha256": "2fe7b5c798ee00ae18bab865ec40b2ece566ecd968202616540a02abb3e94c92"
+        },
+        {
+          "component": "DNFiniteWaveTrace.lean",
+          "line": 82310,
+          "original_component_sha256": "8d16bfb1d8777ee5317ee12ae81f7270b01861b94f6f8b9e005de22d87918264"
+        },
+        {
+          "component": "DNTangentialPlaneWave.lean",
+          "line": 82933,
+          "original_component_sha256": "98beab693f72dc2b5403d6018b9bddd0d7d412d860adbcbee8e0323d31f937a8"
+        },
+        {
+          "component": "DNProfileReadings.lean",
+          "line": 83005,
+          "original_component_sha256": "499c786141309fdff9248ddeb83f4dc5b928001bf1dbf39b4b049457803a56d2"
+        },
+        {
+          "component": "DNForcingReadings.lean",
+          "line": 83071,
+          "original_component_sha256": "dd0385a4d298a9df24946bca372d055f2a99847e7a711c61fa7b1d4018d2f778"
+        }
+      ],
+      "module": "Proof.CalderonPatch.BoundaryLayerWaves",
+      "destination": "Proof/CalderonPatch/BoundaryLayerWaves.lean",
+      "changes": [
+        "assembled selected dimension-independent components",
+        "adapted imports, notation and transparency for the pinned Lean module interfaces"
+      ],
+      "adopted_sha256": "16f87ca9727aced1004185f577d43d35bbf1506214d04648ce46de15fafc0b58",
+      "license": "BSD-3-Clause"
+    },
+    {
+      "source": "Solution.lean",
+      "components": [
+        {
+          "component": "DNLayerPolynomialLocality.lean",
+          "line": 88993,
+          "original_component_sha256": "3a74c8d02e531d0a465c85ef7c71d7384ee25adaa1990bca23f06b59f5e70b50"
+        },
+        {
+          "component": "DNLayerForcingCongruence.lean",
+          "line": 89031,
+          "original_component_sha256": "07e78216131bcfc38da93e611d7092e6c47fd9e10f7ae3aa140e6deddaaefe1c"
+        },
+        {
+          "component": "DNLowerProfileAgreement.lean",
+          "line": 89103,
+          "original_component_sha256": "a19c341cfaf60f09f813468332763a5b0e3993d16e9bf0b497315a1c906b5496"
+        },
+        {
+          "component": "DNTopForcingDifference.lean",
+          "line": 89149,
+          "original_component_sha256": "56f4d91ea4bdaa1ed58550dc0ac2f89f5314a1caa92c549701529b7cda7e0fd1"
+        },
+        {
+          "component": "DNTopLayerForcing.lean",
+          "line": 89221,
+          "original_component_sha256": "4b14d911b199d11467bd9628e673a09d7a135d20950928278b421277275b212f"
+        },
+        {
+          "component": "DNFiniteTraceResponse.lean",
+          "line": 89273,
+          "original_component_sha256": "2e8ae634be05bbabd6496848ed15f91e42d99e84fb8dc29ccb2ac58766ec524c"
+        },
+        {
+          "component": "DNTraceFactorialAlgebra.lean",
+          "line": 89318,
+          "original_component_sha256": "cea2f0933a7aa7ca8dcca1cae3166cde7499ec260f9922468f1fafe6ad5b52cb"
+        }
+      ],
+      "module": "Proof.CalderonPatch.BoundaryLayerTraceResponse",
+      "destination": "Proof/CalderonPatch/BoundaryLayerTraceResponse.lean",
+      "changes": [
+        "assembled selected dimension-independent components",
+        "adapted imports, notation and transparency for the pinned Lean module interfaces",
+        "generalized the highest finite trace coefficient response to an arbitrary boundary amplitude"
+      ],
+      "adopted_sha256": "67c52d7474c74cef3ce6fda12f09b68909c0707f4420080bc48705f731def2d4",
+      "license": "BSD-3-Clause"
+    },
+    {
+      "source": "Solution.lean",
+      "components": [
+        {
+          "component": "DNLayerTruncation.lean",
+          "line": 83548,
+          "original_component_sha256": "c121b6b7e8de0186a6e0dbbf0269e72085d6e19656da61e3414e8dd035e7c6d1"
+        },
+        {
+          "component": "DNTriangularScalePolynomial.lean",
+          "line": 83617,
+          "original_component_sha256": "a9ec6c9119dc8af50562761ad0ff0444b862bd830fcf7473563c75d3b5d2c1b0"
+        },
+        {
+          "component": "DNFiniteResidualCancellation.lean",
+          "line": 83696,
+          "original_component_sha256": "04a31df4b00d44cef839cb86ee6393b9ce8bc3bf80d5aa1425364d7bce8d23fc"
+        },
+        {
+          "component": "DNFiniteResidualRegular.lean",
+          "line": 83754,
+          "original_component_sha256": "d8bb175bd15beef0d2005637a675b700aabdd5f2144de40a74c904b2ed9a1c2e"
+        },
+        {
+          "component": "DNFiniteResidualBound.lean",
+          "line": 83839,
+          "original_component_sha256": "97cebefb9cbd85bfec70c87f561efc2e2baa9a4307672cb044343d999fd3de89"
+        },
+        {
+          "component": "DNResidualEvaluation.lean",
+          "line": 83912,
+          "original_component_sha256": "0025e4cdcce17fec441008437cd26c3cf3fcfe0f6730a2e12a188e7fccdb49c5"
+        },
+        {
+          "component": "DNFiniteShiftedSums.lean",
+          "line": 84013,
+          "original_component_sha256": "08265cb52a07b992f448256334b4614b851dc42278422d36a251a1fb775bb116"
+        },
+        {
+          "component": "DNTruncatedActions.lean",
+          "line": 84083,
+          "original_component_sha256": "efd438d589ce196235db0f8dfcda44401fd245fe59e1c015af58f9d715a5e074"
+        },
+        {
+          "component": "DNForcingGapCollection.lean",
+          "line": 84149,
+          "original_component_sha256": "731c715e57aded34ac2d692d4959ec1176205ec4d1b6cc1c2d0df7dec55278b2"
+        }
+      ],
+      "module": "Proof.CalderonPatch.BoundaryLayerResidual",
+      "destination": "Proof/CalderonPatch/BoundaryLayerResidual.lean",
+      "changes": [
+        "assembled selected dimension-independent components",
+        "adapted imports, notation and transparency for the pinned Lean module interfaces"
+      ],
+      "adopted_sha256": "36f235ba513e0c81d456e51100a40f00e86986a37e1b2f1296c35aa2f2f37de5",
+      "license": "BSD-3-Clause"
+    },
+    {
+      "source": "Solution.lean",
+      "components": [
+        {
+          "component": "DNNormalTaylorBound.lean",
+          "line": 82762,
+          "original_component_sha256": "0c541ed4150955e2bd2247019e66fbc3b0e1de2b2389576437bdec05a3ef8362"
+        }
+      ],
+      "module": "Proof.CalderonPatch.BoundaryLayerTaylor",
+      "destination": "Proof/CalderonPatch/BoundaryLayerTaylor.lean",
+      "changes": [
+        "replaced the analytic collar assumption with smoothness using the iterated derivative chain rule in mathlib"
+      ],
+      "adopted_sha256": "3fb15887e498b2d270309e435fbc91ea80a7b63888d44207b22db4721138373a",
+      "license": "BSD-3-Clause"
+    },
+    {
+      "source": "TauCeti/MeasureTheory/Function/LocallyIntegrable.lean",
+      "source_sha256": "e7bdcef604300c5f97f10bc40145b6a0f20adb55f15c8b493a87c620f93769b1",
+      "module": "Proof.ReleasedAnalysis.TauCeti.MeasureTheory.Function.LocallyIntegrableOperations",
+      "destination": "Proof/ReleasedAnalysis/TauCeti/MeasureTheory/Function/LocallyIntegrableOperations.lean",
+      "changes": [
+        "adapted imports and API spellings to the project pins",
+        "selected finite sums and compact relative integrability"
+      ],
+      "adopted_sha256": "1a109b65ed37a6bf0199f1d1ebc8ae55a9dd4422d061b9bff85ca1dfca9d37ac",
+      "license": "Apache-2.0"
+    },
+    {
+      "source": "TauCeti/Analysis/SpecialFunctions/Sqrt.lean",
+      "source_sha256": "82d6218cc69c3fb9afe915686ab59668ef77fd633b436be93519cd211528982a",
+      "module": "Proof.ReleasedAnalysis.TauCeti.Analysis.SpecialFunctions.Sqrt",
+      "destination": "Proof/ReleasedAnalysis/TauCeti/Analysis/SpecialFunctions/Sqrt.lean",
+      "changes": [
+        "adapted imports and API spellings to the project pins"
+      ],
+      "adopted_sha256": "82d6218cc69c3fb9afe915686ab59668ef77fd633b436be93519cd211528982a",
+      "license": "Apache-2.0"
+    },
+    {
+      "source": "TauCeti/Analysis/Normed/Module/Basic.lean",
+      "source_sha256": "22b5814e0b85290dae42778c10e2e0194369327d825e6a2fd626b871c699841c",
+      "module": "Proof.ReleasedAnalysis.TauCeti.Analysis.Normed.Module.Basic",
+      "destination": "Proof/ReleasedAnalysis/TauCeti/Analysis/Normed/Module/Basic.lean",
+      "changes": [
+        "adapted imports and API spellings to the project pins"
+      ],
+      "adopted_sha256": "22b5814e0b85290dae42778c10e2e0194369327d825e6a2fd626b871c699841c",
+      "license": "Apache-2.0"
+    },
+    {
+      "source": "TauCeti/MeasureTheory/Integral/Bochner/Basic.lean",
+      "source_sha256": "6609b2a487b668c0034f292f556378819fa0addcec04b9129c3451a2c138005e",
+      "module": "Proof.ReleasedAnalysis.TauCeti.MeasureTheory.Integral.Bochner.Basic",
+      "destination": "Proof/ReleasedAnalysis/TauCeti/MeasureTheory/Integral/Bochner/Basic.lean",
+      "changes": [
+        "adapted imports and API spellings to the project pins"
+      ],
+      "adopted_sha256": "4e508a6accd82f0d1a0e0cc6da93a6a5d9ac933a934772c2db0bac00f6b08860",
+      "license": "Apache-2.0"
+    },
+    {
+      "source": "Proof/FoundationSupplement/TauCeti/Analysis/Calculus/LineDeriv/Basic.lean",
+      "source_sha256": "84aec7e8fb35af42dc336027299ad622fc38a25a741ece99b0aab2da2bacf4d7",
+      "module": "Proof.ReleasedAnalysis.TauCeti.Analysis.Calculus.LineDeriv.Basic",
+      "destination": "Proof/ReleasedAnalysis/TauCeti/Analysis/Calculus/LineDeriv/Basic.lean",
+      "changes": [
+        "adapted imports and API spellings to the project pins"
+      ],
+      "adopted_sha256": "84aec7e8fb35af42dc336027299ad622fc38a25a741ece99b0aab2da2bacf4d7",
+      "license": "Apache-2.0"
+    },
+    {
+      "source": "Proof/FoundationSupplement/TauCeti/Analysis/Sobolev/WeakDeriv/Limit.lean",
+      "source_sha256": "57fb28d3f14045cd36c51bc4c614fa22d3c71372be6346447dfb3f62778d75f0",
+      "module": "Proof.ReleasedAnalysis.TauCeti.Analysis.Sobolev.WeakDeriv.Limit",
+      "destination": "Proof/ReleasedAnalysis/TauCeti/Analysis/Sobolev/WeakDeriv/Limit.lean",
+      "changes": [
+        "adapted imports and API spellings to the project pins"
+      ],
+      "adopted_sha256": "33b707089fb46d91740cf132ca165a61926f0517b3e4bcd2dfaa1123857019f1",
+      "license": "Apache-2.0"
+    },
+    {
+      "source": "Proof/FoundationSupplement/TauCeti/Analysis/Distribution/TestFunction/PartitionOfUnity.lean",
+      "source_sha256": "926678f9fdd71fcade337faaba35baed63c287d85b7ac8948570a70c589bcab7",
+      "module": "Proof.ReleasedAnalysis.TauCeti.Analysis.Distribution.TestFunction.PartitionOfUnity",
+      "destination": "Proof/ReleasedAnalysis/TauCeti/Analysis/Distribution/TestFunction/PartitionOfUnity.lean",
+      "changes": [
+        "adapted imports and API spellings to the project pins"
+      ],
+      "adopted_sha256": "b6574e7bf28e21029720fc6ddf2d51ad7a7e63c13b09fa86b249b07acf83d51d",
+      "license": "Apache-2.0"
+    },
+    {
+      "source": "Proof/FoundationSupplement/TauCeti/MeasureTheory/Function/Gluing.lean",
+      "source_sha256": "7e07105ec3535ce5fadfe1376ff838663a8343dead6eb6534393f59a36523b8e",
+      "module": "Proof.ReleasedAnalysis.TauCeti.MeasureTheory.Function.Gluing",
+      "destination": "Proof/ReleasedAnalysis/TauCeti/MeasureTheory/Function/Gluing.lean",
+      "changes": [
+        "adapted imports and API spellings to the project pins"
+      ],
+      "adopted_sha256": "7e07105ec3535ce5fadfe1376ff838663a8343dead6eb6534393f59a36523b8e",
+      "license": "Apache-2.0"
+    },
+    {
+      "source": "Proof/FoundationSupplement/TauCeti/Analysis/Sobolev/WeakDeriv/Local.lean",
+      "source_sha256": "fc9e54a1f361013556351bcbd082733e142b3da022de055a2db34bf5156cd451",
+      "module": "Proof.ReleasedAnalysis.TauCeti.Analysis.Sobolev.WeakDeriv.Local",
+      "destination": "Proof/ReleasedAnalysis/TauCeti/Analysis/Sobolev/WeakDeriv/Local.lean",
+      "changes": [
+        "adapted imports and API spellings to the project pins",
+        "also extracted local integrability of weak derivatives from WeakDeriv.Basic"
+      ],
+      "adopted_sha256": "16b59cde13648a3914834f461a0e5b30e09c48efe8034bd26062fc02b28ad6e1",
+      "license": "Apache-2.0",
+      "additional_sources": [
+        {
+          "source": "Proof/FoundationSupplement/TauCeti/Analysis/Sobolev/WeakDeriv/Basic.lean",
+          "source_sha256": "54b1e2bf0dbe1b34ca179cbeda3bc2a6f5e8e47ed83883715c3d320ce0624b70"
+        }
+      ]
+    },
+    {
+      "source": "Proof/FoundationSupplement/TauCeti/Data/ENNReal/Inv.lean",
+      "source_sha256": "aecfa709ad47f2e17bd62ca6b74d5afce8ee7a10257a5e85565e8cae991ff3f4",
+      "module": "Proof.ReleasedAnalysis.TauCeti.Data.ENNReal.Inv",
+      "destination": "Proof/ReleasedAnalysis/TauCeti/Data/ENNReal/Inv.lean",
+      "changes": [
+        "adapted imports and API spellings to the project pins"
+      ],
+      "adopted_sha256": "aecfa709ad47f2e17bd62ca6b74d5afce8ee7a10257a5e85565e8cae991ff3f4",
+      "license": "Apache-2.0"
+    },
+    {
+      "source": "Proof/FoundationSupplement/TauCeti/MeasureTheory/Function/Lp/Exponent.lean",
+      "source_sha256": "81ae93c59f6ff275ffd9ee7b27c251e9f2e02cc6cca91f3b2e2ae38dc50e6a7a",
+      "module": "Proof.ReleasedAnalysis.TauCeti.MeasureTheory.Function.Lp.Exponent",
+      "destination": "Proof/ReleasedAnalysis/TauCeti/MeasureTheory/Function/Lp/Exponent.lean",
+      "changes": [
+        "adapted imports and API spellings to the project pins"
+      ],
+      "adopted_sha256": "9b6200f471293fc50dab807dd6e231bd09132d36481910ceb7b3aebe8737abd9",
+      "license": "Apache-2.0"
+    },
+    {
+      "source": "Proof/FoundationSupplement/TauCeti/MeasureTheory/Function/Lp/L1Convergence.lean",
+      "source_sha256": "92bf01440a12ea92f8d383c2bc02685476cd6a72b7850b8e7481c091bef38103",
+      "module": "Proof.ReleasedAnalysis.TauCeti.MeasureTheory.Function.Lp.L1Convergence",
+      "destination": "Proof/ReleasedAnalysis/TauCeti/MeasureTheory/Function/Lp/L1Convergence.lean",
+      "changes": [
+        "adapted imports and API spellings to the project pins"
+      ],
+      "adopted_sha256": "9adc5591af944bafe2eb4676078672720b726b0bd9f8f08f3f982be841e9c5dd",
+      "license": "Apache-2.0"
+    },
+    {
+      "source": "Proof/FoundationSupplement/TauCeti/MeasureTheory/Integral/Lebesgue/DominatedConvergence.lean",
+      "source_sha256": "2564cb01bc917c86ad30f8da2bd1cbe76852ce6aa7f32605717e17bae1855834",
+      "module": "Proof.ReleasedAnalysis.TauCeti.MeasureTheory.Integral.Lebesgue.DominatedConvergence",
+      "destination": "Proof/ReleasedAnalysis/TauCeti/MeasureTheory/Integral/Lebesgue/DominatedConvergence.lean",
+      "changes": [
+        "adapted imports and API spellings to the project pins"
+      ],
+      "adopted_sha256": "4a811ee699e365102df4f008ee819226a0c1649e5bc767274e361510447d8bb2",
+      "license": "Apache-2.0"
+    },
+    {
+      "source": "Proof/FoundationSupplement/TauCeti/Topology/MetricSpace/Lipschitz/Basic.lean",
+      "source_sha256": "f2b0cb6e4a9cc8fa5b386c0e6c97884ba19542e2eb17698e42dd9995d6c7b6c7",
+      "module": "Proof.ReleasedAnalysis.TauCeti.Topology.MetricSpace.Lipschitz.Basic",
+      "destination": "Proof/ReleasedAnalysis/TauCeti/Topology/MetricSpace/Lipschitz/Basic.lean",
+      "changes": [
+        "adapted imports and API spellings to the project pins"
+      ],
+      "adopted_sha256": "f2b0cb6e4a9cc8fa5b386c0e6c97884ba19542e2eb17698e42dd9995d6c7b6c7",
+      "license": "Apache-2.0"
+    },
+    {
+      "source": "Proof/FoundationSupplement/TauCeti/Analysis/Sobolev/W1p/ChainRule.lean",
+      "source_sha256": "6777f50b8f5663823cff757165caecd3e7b917b895e93ad6715f993a5bec2999",
+      "module": "Proof.ReleasedAnalysis.TauCeti.Analysis.Sobolev.W1p.ChainRule",
+      "destination": "Proof/ReleasedAnalysis/TauCeti/Analysis/Sobolev/W1p/ChainRule.lean",
+      "changes": [
+        "adapted imports and API spellings to the project pins",
+        "reuses the checked PriorAnalysis local approximation proof"
+      ],
+      "adopted_sha256": "7fb9ebe09bddefc616f3ca075e0fe8cb94a2c5d9cb6e4fb7b6352bfbd6345f0c",
+      "license": "Apache-2.0"
+    },
+    {
+      "source": "Proof/FoundationSupplement/TauCeti/MeasureTheory/Function/EssSup.lean",
+      "source_sha256": "d450f80889739c631035b0a67b798f1de5db6a9a32f765b999637a6669a371b1",
+      "module": "Proof.ReleasedAnalysis.TauCeti.MeasureTheory.Function.EssSup",
+      "destination": "Proof/ReleasedAnalysis/TauCeti/MeasureTheory/Function/EssSup.lean",
+      "changes": [
+        "adapted imports and API spellings to the project pins"
+      ],
+      "adopted_sha256": "d450f80889739c631035b0a67b798f1de5db6a9a32f765b999637a6669a371b1",
+      "license": "Apache-2.0"
+    },
+    {
+      "source": "Proof/FoundationSupplement/TauCeti/Analysis/Sobolev/W1p/LevelSet.lean",
+      "source_sha256": "3ecc0d7d0ee3cf25b737b7f649c9bf76bd048e63eb68678ca4ecf56b92d8f524",
+      "module": "Proof.ReleasedAnalysis.TauCeti.Analysis.Sobolev.W1p.LevelSet",
+      "destination": "Proof/ReleasedAnalysis/TauCeti/Analysis/Sobolev/W1p/LevelSet.lean",
+      "changes": [
+        "adapted imports and API spellings to the project pins",
+        "selected the Sobolev level-set lemmas",
+        "added the almost-everywhere value of negation"
+      ],
+      "adopted_sha256": "28f2607502eae2a2fa1f6d5e3867b095a95e95f68b35156e56fcb38d7cd2c1d6",
+      "license": "Apache-2.0"
+    },
+    {
+      "source": "Proof/FoundationSupplement/TauCeti/MeasureTheory/Function/UnifTight.lean",
+      "source_sha256": "5f48c5df11b19972475b42256eb7d82b895904e240b0c654f41f9ec24a2a86d6",
+      "module": "Proof.ReleasedAnalysis.TauCeti.MeasureTheory.Function.UnifTight",
+      "destination": "Proof/ReleasedAnalysis/TauCeti/MeasureTheory/Function/UnifTight.lean",
+      "changes": [
+        "adapted imports and API spellings to the project pins"
+      ],
+      "adopted_sha256": "e6bff9f200cc8c636514a2ffd165736a34de9954740a2aef9f47e44b75b64ac4",
+      "license": "Apache-2.0"
+    },
+    {
+      "source": "Proof/FoundationSupplement/TauCeti/Analysis/Sobolev/W1p/Truncation.lean",
+      "source_sha256": "a422e7e092ef53bd59a9a1bb16f4803cb98735f5d96031f68b4429c100f34c00",
+      "module": "Proof.ReleasedAnalysis.TauCeti.Analysis.Sobolev.W1p.Truncation",
+      "destination": "Proof/ReleasedAnalysis/TauCeti/Analysis/Sobolev/W1p/Truncation.lean",
+      "changes": [
+        "adapted imports and API spellings to the project pins"
+      ],
+      "adopted_sha256": "00af5e6116ebb902fbac2447748bc60bf4e7048500b569995b96c44768f5c0fc",
+      "license": "Apache-2.0"
+    },
+    {
+      "source": "Proof/FoundationSupplement/TauCeti/Analysis/Sobolev/W1p/VanishingBoundary.lean",
+      "source_sha256": "c533f4d86bc5f46f830767892ad54a497ee88073193b76234e51fd661d4f5688",
+      "module": "Proof.ReleasedAnalysis.TauCeti.Analysis.Sobolev.W1p.VanishingBoundary",
+      "destination": "Proof/ReleasedAnalysis/TauCeti/Analysis/Sobolev/W1p/VanishingBoundary.lean",
+      "changes": [
+        "adapted imports and API spellings to the project pins",
+        "also extracted the constant Sobolev function from W1p.Basic"
+      ],
+      "adopted_sha256": "459b04c2a6d73c3c5b81f92b4a1e68e1992c7cbda0007be11b81f5ce6c48c875",
+      "license": "Apache-2.0",
+      "additional_sources": [
+        {
+          "source": "Proof/FoundationSupplement/TauCeti/Analysis/Sobolev/W1p/Basic.lean",
+          "source_sha256": "fc8b91a565acb049c6ffcace74d9396b7c223cd8fbe48ee2eb59eca2d1f55c83"
+        }
+      ]
+    },
+    {
+      "source": "Solution.lean",
+      "components": [
+        {
+          "component": "DNRawFiniteProfiles.lean",
+          "line": 84432,
+          "original_component_sha256": "9a0fb2f404460c952261134c7043cc552e779e177a6a9073f49a75bf6c2afb13"
+        },
+        {
+          "component": "DNLayerJetBounds.lean",
+          "line": 84518,
+          "original_component_sha256": "d0e0d942a05febcfc11748eac7a747b02d2d0c5ff413d548475b9867f9a3cc9b"
+        },
+        {
+          "component": "DNNormalScaling.lean",
+          "line": 84615,
+          "original_component_sha256": "b9993f2cf00674903e068b40f29e8ab4c9c46bfc9303e34d76bf4fd4ae495858"
+        },
+        {
+          "component": "DNScaledWaveDerivatives.lean",
+          "line": 84668,
+          "original_component_sha256": "d28b82cdad0144c069a7b0f315711c9e123563906dea1afaea0a96adc2979d74"
+        },
+        {
+          "component": "DNActualLayerJetBounds.lean",
+          "line": 84745,
+          "original_component_sha256": "0d7f16cc6e96d6afac282f71b360820f0bb5a6cc01b28a8627c69c03465e34ce"
+        },
+        {
+          "component": "DNScalarConjugation.lean",
+          "line": 84818,
+          "original_component_sha256": "5fb57013fd80b24214adb4427db0dab595f98ed442395b7b609dba8a84a3f7f0"
+        },
+        {
+          "component": "DNScalarCoefficientDifference.lean",
+          "line": 84942,
+          "original_component_sha256": "28a5f38771ccc3fd71796f281f4682fdf260df561846dc6daf10842c68f962d0"
+        }
+      ],
+      "module": "Proof.CalderonPatch.BoundaryLayerScalar",
+      "destination": "Proof/CalderonPatch/BoundaryLayerScalar.lean",
+      "changes": [
+        "assembled selected dimension-independent components",
+        "adapted imports, notation and transparency for the pinned Lean module interfaces"
+      ],
+      "adopted_sha256": "4a09165d9c5fc40de72e8330f95c2b4eb1405b6e0fac74269b5920d290f49fec",
+      "license": "BSD-3-Clause"
+    },
+    {
+      "source": "Solution.lean",
+      "components": [
+        {
+          "component": "DNTaylorCoefficientReadings.lean",
+          "line": 84223,
+          "original_component_sha256": "4f9e45a792580a15045301b701536f8b034b1b1c67dae633400caa4acacdb187"
+        },
+        {
+          "component": "DNTaylorActionProfiles.lean",
+          "line": 85185,
+          "original_component_sha256": "c2cc665794eb1c419c3a1181216e7dd3806b0064803aaf117d1b72f2fbef80bd"
+        },
+        {
+          "component": "DNTruncatedScalarProfile.lean",
+          "line": 85308,
+          "original_component_sha256": "b80bba1302409ca055d830a2424dfe7c8362615d2313c69ad48e461e3f784c3f"
+        },
+        {
+          "component": "DNTruncatedScalarSum.lean",
+          "line": 85380,
+          "original_component_sha256": "48fc3e8d14217ee648dd0ba2d77bc931da0a03345a557dc392f03ec8531b725a"
+        },
+        {
+          "component": "DNNormalCutoffBounds.lean",
+          "line": 85495,
+          "original_component_sha256": "e45e331844d5bd56da5dab7493033c501df23bbcc06b773e914b09dedcca7887"
+        },
+        {
+          "component": "DNNormalCutoffOperator.lean",
+          "line": 85739,
+          "original_component_sha256": "d6787e2984f3c89ca9947358fc589d6fd0e12c0b3ddb2f21478aa8f9427544f6"
+        },
+        {
+          "component": "DNScaledCutoffIdentity.lean",
+          "line": 85859,
+          "original_component_sha256": "a87ff454fb31fe5fd196c9f7946ff8c043535791e9cd0be8632ed4251468bec6"
+        },
+        {
+          "component": "DNNormalCutoffResidualBound.lean",
+          "line": 85912,
+          "original_component_sha256": "e98451d8e3a510cbbc6d28850a4f39e3471160b629acc78e8c0ab665192cce07"
+        }
+      ],
+      "module": "Proof.CalderonPatch.BoundaryLayerCutoffEstimate",
+      "destination": "Proof/CalderonPatch/BoundaryLayerCutoffEstimate.lean",
+      "changes": [
+        "assembled selected dimension-independent components",
+        "adapted imports, notation and transparency for the pinned Lean module interfaces",
+        "exposed the cutoff wave for the verified native residual caller"
+      ],
+      "adopted_sha256": "cc703a4a3d0b8a2d0b01073d52ebc41bb349eb381f59653e060c0fe79b354dc2",
+      "license": "BSD-3-Clause"
+    },
+    {
+      "source": "Solution.lean",
+      "components": [
+        {
+          "component": "DNNativeTaylorResidualBound.lean",
+          "line": 85103,
+          "original_component_sha256": "6ae5e682f7560cf0f3e40a88a50faadcfec619b427b8a63a5fd906ed9437b63d"
+        },
+        {
+          "component": "DNUncutScalarResidualBound.lean",
+          "line": 85422,
+          "original_component_sha256": "3c7108623a4f19d8c95222ec8bac2384d4a6244387d3b1518a761ec79e9a35b3"
+        },
+        {
+          "component": "DNCutoffScalarResidualBound.lean",
+          "line": 86007,
+          "original_component_sha256": "5c52b2c9e99a0ee7f433cc8727ea30fb79aba4b99d32b34ed28a490d4a225509"
+        }
+      ],
+      "module": "Proof.CalderonPatch.BoundaryLayerPhysicalResidual",
+      "destination": "Proof/CalderonPatch/BoundaryLayerPhysicalResidual.lean",
+      "changes": [
+        "generalized the finite Taylor-and-cutoff estimate to the signed operator coefficients",
+        "adapted the imports and notation for the pinned modules"
+      ],
+      "adopted_sha256": "6df2f86462dd7152b0392d9e8163e7fe955dc45f47139017369aa0478fca486b",
+      "license": "BSD-3-Clause"
+    },
+    {
+      "source": "Proof/FoundationSupplement/TauCeti/Analysis/PDE/Ellipticity/Basic.lean",
+      "source_sha256": "81841d6ffac2386a7e0ee36784c5d9f86e9674bcb1e787da4275fbb387faf5a1",
+      "module": "Proof.ReleasedAnalysis.TauCeti.Analysis.PDE.Ellipticity.LipschitzReading",
+      "destination": "Proof/ReleasedAnalysis/TauCeti/Analysis/PDE/Ellipticity/LipschitzReading.lean",
+      "changes": [
+        "adapted module imports and API spelling for the project pins",
+        "selected evaluation and reciprocal estimates"
+      ],
+      "adopted_sha256": "c5726d0b3969c0693376164bfc9c92eeac5ff7cab2f11e80e73f996225478622",
+      "license": "Apache-2.0",
+      "additional_sources": [
+        {
+          "source": "Proof/FoundationSupplement/TauCeti/Analysis/Normed/Field/Lipschitz.lean",
+          "source_sha256": "38bcaec62885936656391548aab3e0f36d6feb7b7fae642b39b7a3f60cadfdce"
+        }
+      ]
+    },
+    {
+      "source": "Proof/FoundationSupplement/TauCeti/Analysis/Sobolev/W1p/DifferenceQuotient.lean",
+      "source_sha256": "8c2d8c630eb5a2ed22006bba4efd555b1d1e6641b1f57ad537b47b5ac375caab",
+      "module": "Proof.ReleasedAnalysis.TauCeti.Analysis.Sobolev.W1p.InvariantDifferenceQuotient",
+      "destination": "Proof/ReleasedAnalysis/TauCeti/Analysis/Sobolev/W1p/InvariantDifferenceQuotient.lean",
+      "changes": [
+        "adapted module imports and API spelling for the project pins",
+        "selected the invariant-domain theorems and used the pinned zero-extension isometry"
+      ],
+      "adopted_sha256": "82f88231fe6de44e98aa384519d689303b9307131015e7a26dbed263d4463f2a",
+      "license": "Apache-2.0"
+    },
+    {
+      "source": "Proof/FoundationSupplement/TauCeti/Analysis/PDE/EnergyForm/DifferenceQuotient.lean",
+      "source_sha256": "bbe62b2115dbc85fcc139017f33adf2b2b41819c969958b6e32add43db82c84c",
+      "module": "Proof.ReleasedAnalysis.TauCeti.Analysis.PDE.EnergyForm.InvariantDifferenceQuotient",
+      "destination": "Proof/ReleasedAnalysis/TauCeti/Analysis/PDE/EnergyForm/InvariantDifferenceQuotient.lean",
+      "changes": [
+        "adapted module imports and API spelling for the project pins",
+        "adapted invariant-domain energy form estimates to coexist with the checked whole-space API"
+      ],
+      "adopted_sha256": "d93c6c552d7961c4d2773cf466968301faeb82e7c74e8877d8e72516f88eaa92",
+      "license": "Apache-2.0",
+      "additional_sources": [
+        {
+          "source": "Proof/FoundationSupplement/TauCeti/Analysis/PDE/EnergyForm/Sobolev.lean",
+          "source_sha256": "8ac3ba2912b574c157507d40f39cd607dd59e0cbd0fc98a0765d7d86a1276253"
+        }
+      ]
+    },
+    {
+      "source": "Proof/FoundationSupplement/TauCeti/Analysis/PDE/Regularity/Basic.lean",
+      "source_sha256": "088a9c3092b4eb37340d47e20bc58ca68b3f9dd50941c9449cf90857e8b97477",
+      "module": "Proof.ReleasedAnalysis.TauCeti.Analysis.PDE.Regularity.InvariantDirection",
+      "destination": "Proof/ReleasedAnalysis/TauCeti/Analysis/PDE/Regularity/InvariantDirection.lean",
+      "changes": [
+        "adapted module imports and API spelling for the project pins",
+        "selected the estimates along domain-preserving translations"
+      ],
+      "adopted_sha256": "91bf17575291425de39a203da9380f403333f35d9246b67a255611ac5b7629c1",
+      "license": "Apache-2.0"
+    },
+    {
+      "source": "Proof/FoundationSupplement/TauCeti/Analysis/Distribution/TestFunction/Integral.lean",
+      "source_sha256": "0a9930fae02ac7303720f9f6f394eaf38a25331ff382dcaefb5a3d3f58c0731f",
+      "module": "Proof.ReleasedAnalysis.TauCeti.Analysis.Distribution.TestFunction.Integral",
+      "destination": "Proof/ReleasedAnalysis/TauCeti/Analysis/Distribution/TestFunction/Integral.lean",
+      "changes": [
+        "adapted module imports and API spelling for the project pins"
+      ],
+      "adopted_sha256": "5e0a85ebecf266341993f3f82655976c64b914f7015fa415c1fd7c324337cae4",
+      "license": "Apache-2.0"
+    },
+    {
+      "source": "Proof/FoundationSupplement/TauCeti/Analysis/InnerProductSpace/HalfSpace.lean",
+      "source_sha256": "feda6e1c997da6812478607c23b4c7eafdb4769eab4753e60dbdf99cc04af632",
+      "module": "Proof.ReleasedAnalysis.TauCeti.Analysis.InnerProductSpace.HalfSpace",
+      "destination": "Proof/ReleasedAnalysis/TauCeti/Analysis/InnerProductSpace/HalfSpace.lean",
+      "changes": [
+        "adapted module imports and API spelling for the project pins"
+      ],
+      "adopted_sha256": "feda6e1c997da6812478607c23b4c7eafdb4769eab4753e60dbdf99cc04af632",
+      "license": "Apache-2.0"
+    },
+    {
+      "source": "Proof/FoundationSupplement/TauCeti/Analysis/Distribution/TestFunction/LineDeriv.lean",
+      "source_sha256": "c5113b67a9687fd546a5285fed21cdc5bfcb7280f695578ce7de5ce224dc1128",
+      "module": "Proof.ReleasedAnalysis.TauCeti.Analysis.Distribution.TestFunction.LineDeriv",
+      "destination": "Proof/ReleasedAnalysis/TauCeti/Analysis/Distribution/TestFunction/LineDeriv.lean",
+      "changes": [
+        "adapted module imports and API spelling for the project pins"
+      ],
+      "adopted_sha256": "89bb8759799ac045cc33c91cb85c7cfc3ba48d87753d1c14bb42ee76ee3a769a",
+      "license": "Apache-2.0"
+    },
+    {
+      "source": "Proof/FoundationSupplement/TauCeti/Analysis/Sobolev/WeakDeriv/Symmetry.lean",
+      "source_sha256": "4b6331511806b9a99ec731f933e141504699ce686dc44541cc252d4d92743f8d",
+      "module": "Proof.ReleasedAnalysis.TauCeti.Analysis.Sobolev.WeakDeriv.Symmetry",
+      "destination": "Proof/ReleasedAnalysis/TauCeti/Analysis/Sobolev/WeakDeriv/Symmetry.lean",
+      "changes": [
+        "adapted module imports and API spelling for the project pins"
+      ],
+      "adopted_sha256": "712ed1a4bc31732c5d1e53518c610f4dd5730303d07a1eff7ae3cfc2c6e8bf1b",
+      "license": "Apache-2.0"
+    },
+    {
+      "source": "Proof/FoundationSupplement/TauCeti/Analysis/Sobolev/W1p/Symmetry.lean",
+      "source_sha256": "f989a991ab3b52b13907bd6f51f81081639637e58ebdb2bf325ef78886f52aa8",
+      "module": "Proof.ReleasedAnalysis.TauCeti.Analysis.Sobolev.W1p.Symmetry",
+      "destination": "Proof/ReleasedAnalysis/TauCeti/Analysis/Sobolev/W1p/Symmetry.lean",
+      "changes": [
+        "adapted module imports and API spelling for the project pins"
+      ],
+      "adopted_sha256": "a54e7552f309efbd3b2a88a7ee7f2af274bd4b4ec2204fedbff8d8876cbbd22b",
+      "license": "Apache-2.0"
+    },
+    {
+      "source": "Proof/FoundationSupplement/TauCeti/Analysis/PDE/Regularity/HalfSpace.lean",
+      "source_sha256": "8e160334314c5d185fc54aa2d29fffe5e53b3afa3b4070669d699a1adf4677f7",
+      "module": "Proof.ReleasedAnalysis.TauCeti.Analysis.PDE.Regularity.HalfSpace",
+      "destination": "Proof/ReleasedAnalysis/TauCeti/Analysis/PDE/Regularity/HalfSpace.lean",
+      "changes": [
+        "adapted module imports and API spelling for the project pins",
+        "specialized to globally smooth, positive coefficient forms and used the checked smooth Leibniz theorem"
+      ],
+      "adopted_sha256": "c7ed45995f51025944d31f4d9e01c92728e634538cdeabb07e6347bcdcf4bb59",
+      "license": "Apache-2.0"
+    },
+    {
+      "source": "Proof/FoundationSupplement/TauCeti/Analysis/PDE/Regularity/Interior.lean",
+      "source_sha256": "fc6241a522af45d4529d82208f97b1865c4eb38b3b9716b4d28c503f26c9d103",
+      "module": "Proof.ReleasedAnalysis.TauCeti.Analysis.PDE.Regularity.SmoothCutoff",
+      "destination": "Proof/ReleasedAnalysis/TauCeti/Analysis/PDE/Regularity/SmoothCutoff.lean",
+      "changes": [
+        "specialized the principal coefficient to global smoothness",
+        "reused the existing checked WeakSolutionLocalization and zero extension"
+      ],
+      "adopted_sha256": "84097ece7566dcad814bc53b096b3c6fd5622bb0be2fcb5ee3962127077c77ab",
+      "license": "Apache-2.0"
+    },
+    {
+      "source": "Proof/FoundationSupplement/TauCeti/Analysis/PDE/Regularity/FlatBoundary.lean",
+      "source_sha256": "5f4628ded4cd11c4f35775711c5a7c3d8de27c1e400c858818c1542864ae2991",
+      "module": "Proof.ReleasedAnalysis.TauCeti.Analysis.PDE.Regularity.SmoothFlatBoundary",
+      "destination": "Proof/ReleasedAnalysis/TauCeti/Analysis/PDE/Regularity/SmoothFlatBoundary.lean",
+      "changes": [
+        "used the signed metric smooth extension",
+        "called the checked smooth half-space regularity theorem"
+      ],
+      "adopted_sha256": "70daf98c33aed7e59c85812380e24cd61ec611c4a65aba885fc0335909141123",
+      "license": "Apache-2.0"
+    },
+    {
+      "source": "Proof/FoundationSupplement/TauCeti/Analysis/Sobolev/Trace/Reflection/Basic.lean",
+      "source_sha256": "e488dd273e7050502be038802264e0c6415e93d0803d04414171ac912b707a3d",
+      "module": "Proof.CalderonPatch.HalfSpaceTangentialExtension",
+      "destination": "Proof/CalderonPatch/HalfSpaceTangentialExtension.lean",
+      "changes": [
+        "adapted the reflection argument for the native Tangential Sobolev reading"
+      ],
+      "adopted_sha256": "4c342a56c37e1372a7001906f53d0fe40458818fcd3f38ca44fae8947469a3e3",
+      "license": "Apache-2.0"
+    },
+    {
+      "source": "Proof/FoundationSupplement/TauCeti/Analysis/Sobolev/Trace/Kernel.lean",
+      "source_sha256": "fd01a477a21e13756e689bef3c93294dda8ea59f6c53951328359ed9c53419b2",
+      "module": "Proof.CalderonPatch.HalfSpaceZeroSupport",
+      "destination": "Proof/CalderonPatch/HalfSpaceZeroSupport.lean",
+      "changes": [
+        "adapted the supported extension and boundary density argument"
+      ],
+      "adopted_sha256": "dfe23d30ae0df5b224d3491925d86725b2adb9dc8c52c60e38e569a1b7c6cc22",
+      "license": "Apache-2.0"
+    },
+    {
+      "source": "Solution.lean",
+      "components": [
+        {
+          "component": "HalfSpaceTangentialTrace.lean",
+          "line": 41452,
+          "original_component_sha256": "c3b29c28ed88d97f63110c49ad6ec1e0c933671a29b241c0f711c963a3e27299"
+        }
+      ],
+      "module": "Proof.CalderonPatch.HalfSpaceTangentialTrace",
+      "destination": "Proof/CalderonPatch/HalfSpaceTangentialTrace.lean",
+      "changes": [
+        "adapted to the canonical anisotropic weak inverse and pinned modules"
+      ],
+      "adopted_sha256": "d27d4bea0b6761965e44d73040b47035a33ad3fa5621517e44c0e2cf3e7f4b3f",
+      "license": "BSD-3-Clause"
+    },
+    {
+      "source": "Solution.lean",
+      "components": [
+        {
+          "component": "NativeRepresentativeGluing.lean",
+          "line": 44116,
+          "original_component_sha256": "d5c7f1e0312f4ffee05c2139ebbfc0bd3403823a81ea73d39bf71b404c781cbd"
+        }
+      ],
+      "module": "Proof.CalderonPatch.NativeRepresentativeGluing",
+      "destination": "Proof/CalderonPatch/NativeRepresentativeGluing.lean",
+      "changes": [
+        "adapted to the canonical anisotropic weak inverse and pinned modules"
+      ],
+      "adopted_sha256": "8909297b83cfb2dbea5ebe1ccf364150f70fcf79f21283f60cd1e6b09bc853a1",
+      "license": "BSD-3-Clause"
+    }
+  ]
+}

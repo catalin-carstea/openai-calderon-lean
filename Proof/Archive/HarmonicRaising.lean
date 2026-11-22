@@ -1,6 +1,13 @@
+module
+
+/- Adopted with module headers from Proposition 5.3 release f308cb9d. -/
 /- Adapted from the selected ZIP, lean/Calderon/HarmonicRaising.lean.
    Proof bodies and mathematical declarations are preserved. Local import paths are rewritten. -/
-import Proof.Archive.FischerPolynomial
+public import Proof.Archive.FischerPolynomial
+
+import Mathlib.Tactic
+
+@[expose] public section
 
 noncomputable section
 namespace OAI.AnisotropicCalderon.AngularPolynomial

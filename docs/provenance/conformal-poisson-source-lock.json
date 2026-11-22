@@ -1,0 +1,16 @@
+{
+  "repository": "https://github.com/catalin-carstea/arxiv-2610.13592-lean",
+  "commit": "4cfcab036aedbb4f825a3aeb366da12fe5673ddd",
+  "archive": "source.zip",
+  "sha256": "2d85bdd06174cfca7741279554c8963b995c9537134674fc50e99e2991eb0569",
+  "verified_source_files": {
+    "released_proof": 817,
+    "bundled_tauceti": 253,
+    "challenge_and_toolchain": 2
+  },
+  "release_check": "c88c5faf9a6be66d236ab8d17c138a3e4c9ef890556dbff18ba4a755113453b6",
+  "source_toolchain": "leanprover/lean4:v4.36.0-rc2",
+  "source_mathlib": "2ddf59c8f14245864e6c0ed227a2dab76b9efea2",
+  "source_tauceti": "4d91513e4d30746eb1fa96658c18e051c772e55e",
+  "purpose": "User-selected supporting source for smooth half-space regularity, boundary layers and native Green kernel construction."
+}

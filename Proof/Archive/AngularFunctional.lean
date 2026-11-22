@@ -1,7 +1,14 @@
+module
+
+/- Adopted with module headers from Proposition 5.3 release f308cb9d. -/
 /- Adapted from the selected ZIP, lean/Calderon/AngularFunctional.lean.
    Proof bodies and mathematical declarations are preserved. Local import paths are rewritten. -/
-import Proof.Archive.FischerContraction
+public import Proof.Archive.FischerContraction
 import Mathlib.Topology.Algebra.InfiniteSum.Real
+
+import Mathlib.Tactic
+
+@[expose] public section
 
 noncomputable section
 namespace OAI.AnisotropicCalderon.AngularPolynomial

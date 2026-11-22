@@ -1,10 +1,14 @@
+module
+
 /- Adapted from the selected ZIP, lean/Calderon/RaisingCoercivity.lean.
    Proof bodies and mathematical declarations are preserved. Local import paths are rewritten. -/
-import Mathlib.Basic.Real.Basic
+public import Mathlib.Basic.Real.Basic
 import Mathlib.Tactic.Linarith
 import Mathlib.Tactic.Positivity
 import Mathlib.Tactic.GCongr
 import Mathlib.Tactic.Ring
+
+public section
 
 set_option maxHeartbeats 800000
 

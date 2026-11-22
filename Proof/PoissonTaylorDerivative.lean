@@ -1,6 +1,10 @@
-import Proof.RectangularImplicitOperatorDerivative
-import Proof.PoissonFirstVariationBound
-import Mathlib.Analysis.Calculus.FDeriv.Add
+module
+
+public import Proof.RectangularImplicitOperatorDerivative
+public import Proof.PoissonFirstVariationBound
+public import Mathlib.Analysis.Calculus.FDeriv.Add
+
+@[expose] public section
 
 noncomputable section
 set_option autoImplicit false

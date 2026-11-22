@@ -1,8 +1,8 @@
 {
   "challenge_module": "ComparatorChallenges.Proposition53",
-  "solution_module": "Solution",
+  "solution_module": "Proof.CalderonN.CheckedLocalExtension",
   "theorem_names": [
-    "ShrinkingSpheres.coercivity"
+    "CalderonN.coercivity"
   ],
   "definition_names": [],
   "permitted_axioms": [

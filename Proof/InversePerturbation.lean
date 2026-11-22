@@ -1,5 +1,9 @@
-import Mathlib.Topology.Algebra.Module.ContinuousLinearMap.Invertible
-import Mathlib.Analysis.Normed.Operator.Basic
+module
+
+public import Mathlib.Topology.Algebra.Module.ContinuousLinearMap.Invertible
+public import Mathlib.Analysis.Normed.Operator.Basic
+
+@[expose] public section
 
 noncomputable section
 set_option autoImplicit false

@@ -1,26 +1,16 @@
-# Guide to the proof sources
+# Guide to the Lean proof
 
-The entry point is [`Solution.lean`](../Solution.lean). It obtains the complete physical principal norm comparison and applies uniform absorption to prove `ShrinkingSpheres.coercivity`. The theorem supplies the finite background order `m = 10`.
+## The three results
 
-| Part | Source |
+| Source step | Implementation |
 | --- | --- |
-| Exact geometric definitions and uniform estimate | [`Proof/Geometry.lean`](../Proof/Geometry.lean) |
-| Final theorem | [`Solution.lean`](../Solution.lean) |
-| Frozen downstream application | [`Consumer.lean`](../Consumer.lean) |
-| Closed physical comparison | [`Proof/PhysicalTruncatedNormComparisonClosed.lean`](../Proof/PhysicalTruncatedNormComparisonClosed.lean) |
-| Common sector assembly | [`Proof/ParallelNormAssemblyUniform.lean`](../Proof/ParallelNormAssemblyUniform.lean) |
-| Complete first-order self comparison | [`Proof/ParallelFirstSelf.lean`](../Proof/ParallelFirstSelf.lean) |
-| Scalar/first-order cross comparison | [`Proof/ParallelScalarFirst.lean`](../Proof/ParallelScalarFirst.lean) |
-| Remaining actual potential and model sectors | [`Proof/ParallelNormAssemblyReservedComplete.lean`](../Proof/ParallelNormAssemblyReservedComplete.lean) |
-| Truncated comparison and physical lower bound | [`Proof/PhysicalTruncatedNormComparison.lean`](../Proof/PhysicalTruncatedNormComparison.lean) |
-| Genuine Dirichlet/physical realization | [`Proof/PhysicalStrongPoissonRealization.lean`](../Proof/PhysicalStrongPoissonRealization.lean) |
-| Uniform finite coercivity | [`Proof/UniformFiniteCoercivity.lean`](../Proof/UniformFiniteCoercivity.lean) |
-| Finite-to-smooth energy limit | [`Proof/FullEnergyLimit.lean`](../Proof/FullEnergyLimit.lean) |
-| Final absorption | [`Proof/Absorption.lean`](../Proof/Absorption.lean) |
-| Bundled analytic library | [`Proof/TauCeti/`](../Proof/TauCeti/) |
+| Proposition 5.3, physical norm estimate | [Coercivity statement and energy](../Proof/CalderonN/Coercivity.lean), [principal integrated error](../Proof/CalderonN/UniformActualPrincipalTraceError.lean), [gain and absorption](../Proof/CalderonN/ActualPerturbationCoercivity.lean), [root](../Proof/CalderonN/CheckedLocalExtension.lean#L384) |
+| Theorem 3.1, shrinking-sphere transfer and local equality | [Green kernel restriction](../Proof/CalderonN/GreenRestriction.lean), [actual conformal Green transfer](../Proof/CalderonN/ConformalActualGreenTransfer.lean), [weighted moment and agreement](../Proof/CalderonN/WeightedMomentAgreement.lean), [root](../Proof/CalderonN/CheckedLocalExtension.lean#L392) |
+| Theorem 1.1, boundary measurements and cap | [Energy definitions](../Proof/CalderonPatch/Energy.lean), [measured normal metric jets](../Proof/CalderonPatch/MeasuredBoundaryJets.lean), [cap construction](../Proof/CalderonPatch/MeasuredCommonCap.lean), [cap agreement](../Proof/CalderonPatch/NativeCapAgreement.lean) |
+| Theorem 1.1, interior continuation and boundary gauge | [Shared cap Green kernels and source jets](../Proof/CalderonPatch/GlobalFromNativeCapSources.lean), [touching-ball application](../Proof/CalderonPatch/FrontierLocalExtension.lean#L61), [smooth extension](../Proof/CalderonPatch/OriginalFromInterior.lean), [entire measured patch](../Proof/CalderonPatch/MeasuredAccessibleGauge.lean), [root](../Solution.lean#L19) |
 
-The proof uses direct Sobolev/Dirichlet constructions and finite-word estimates rather than reconstructing a symbol parametrix. The whole second-metric drift and uniformly H¹-bounded complements are absorbed separately, as allowed by the selected expansion. A Hilbert-space norm-square partner appears only after the genuine physical one-sided comparison is proved; it is not asserted to be the physical formal adjoint.
+The coercivity proof generalizes the Fischer decomposition and zonal sphere projections, estimates the actual principal error in the physical energy norm, and absorbs the second-metric drift. The local extension proof calls this estimate on the cutoff transfer density produced by the actual Green kernel. The same dimension is used for the estimate, the Green kernel, and the metric equality.
 
-Imports describe formal dependencies. Inspect the constructions and actual inference bodies rather than treating file names as proof evidence. Names such as `Parallel`, `Actual` and version tags record development history, not unfinished proofs. All solution sources are byte-identical to the released proof. The naming adapter in `Proof/FrozenDeclarationHygiene.lean` uses ordinary declaration elaboration to preserve the approved compiler-generated binder names after modularization; it does not replace mathematical definitions or the kernel.
+The global proof uses finite boundary-layer solutions to extract normal metric jets from the measured pairing. A smooth truncation of the difference of two cap solutions gives a Green flux identity across the attachment seam. The resulting cap agreement supplies a common family of sources, their actual Green kernels, and the harmonic coordinates and Hessian witnesses needed at an interior frontier. The touching-ball call to Theorem 3.1 extends the match across the frontier. Smooth completion and measured conormal equality produce the diffeomorphism on the original manifold and fix the whole measured patch.
 
-The independent challenge has its intentional `sorry`. It is outside the default build and is never imported by the proof. The comparator checks the theorem against it using only `propext`, `Quot.sound` and `Classical.choice`, compares the reachable defining declarations and replays the exported proof in Lean's kernel.
+The [global consumer](../Consumer.lean) recovers the tangent-energy identity for every tangent vector. The [local consumers](../Applications/Local.lean) apply Proposition 5.3 to zero trace output and Theorem 3.1 to chart gluing and ambient Dirichlet Green kernels. [Source provenance](provenance/checked-sources.json)

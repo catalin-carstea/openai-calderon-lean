@@ -1,9 +1,13 @@
-# Selected statement and edition
+# Selected statements and edition
 
-The authority is the supplied standalone `proposition-5-3-n3.tex`, Proposition 5.3, label `angular:coercivity`, lines 478–493. The proof begins at line 495. The selected TeX file is preserved byte for byte here (SHA256 `6f3b7ec11a73af85ddac5d65131ac1c88b540acff54ac8b04256a1d5ecb1627b`). Its original supplied archive has SHA256 `911c90c4d9a0c8c9bae977c67963f58f34bbcc072c216d1896fdd7f0cb3f727c`.
+The source is OpenAI's September 24, 2026 manuscript, *Smooth anisotropic uniqueness in the Calderón problem from one boundary patch*, at commit `adc7f1241b42e322a6451854ab7e4b4c146bf78a`. [Pinned PDF](https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Smooth-Anisotropic-Uniqueness-in-the-Calderon-Problem-from-One-Boundary-Patch-September-24-2026/paper.pdf) · [Source hashes](source-lock.json)
 
-`Reference.lean` is the independently preserved approved translation, including the definitions that determine the theorem's meaning and the intentionally open challenge proof. `ComparatorChallenges/Proposition53.lean` is an exact copy. Nothing in the solution imports either file.
+| Result | Manuscript locator | Frozen Lean reference |
+| --- | --- | --- |
+| Theorem 1.1 | §1, `main:patch`, `01-introduction.tex` lines 54–68 | [Global.lean](frozen/Global.lean) |
+| Theorem 3.1 | §3, `local:extension`, `03-product-continuation.tex` lines 12–30 | [Local.lean](frozen/Local.lean) |
+| Proposition 5.3 | §5, `angular:coercivity`, `05-angular-estimate.tex` lines 426–440 | [Local.lean](frozen/Local.lean) |
 
-The solution retains the original `Fin 9` smallness convention and arbitrary admitted metrics, frames and radius profiles. No additional analytic estimate is a parameter of `ShrinkingSpheres.coercivity`.
+Theorem 1.1 uses smooth metrics and a smooth diffeomorphism on Mathlib's half-space model. Its partial boundary measurements are the diagonal Dirichlet energy pairing on supported smooth data. The proof obtains the bilinear pairing by polarization and uses the canonical positive metric volumes. Theorem 3.1 binds the smooth matching side, harmonic coordinates, paired harmonic functions, and full trace-free Hessian span in the common chart. The ambient-kernel application proves the two chart Green hypotheses. Proposition 5.3 preserves the eight-jet smallness condition, arbitrary admitted radius profiles, and the quantifier order for the uniform thresholds. The theorem statements specialize to `n = 3` by supplying `3 ≤ n`.
 
-Run `./check-challenge.sh` to compare both copies and verify the statement, selected text and dependency pin checksums. In the comparator configuration, `definition_names` is deliberately empty: that field permits definition holes, whereas this challenge requires reachable definitions to agree.
+The `frozen/` tree preserves the reviewed source files. The comparator modules extract one theorem each from those files. Their imports use a separate copy of the frozen definitions with the package's challenge module paths. The theorem and definition bodies retain their original names, binders, and mathematical content. Each comparator configuration leaves `definition_names` empty to require comparison of all reachable definitions. [Challenge sources](../../ComparatorChallenges) · [Challenge checksums](SHA256SUMS)

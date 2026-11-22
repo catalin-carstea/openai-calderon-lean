@@ -1,8 +1,13 @@
+module
+
+/- Adopted with module headers from Proposition 5.3 release f308cb9d. -/
 /- Adapted from the selected ZIP, lean/Calderon/AngularPolynomial.lean.
    Proof bodies and mathematical declarations are preserved. Local import paths are rewritten. -/
-import Mathlib.RingTheory.MvPolynomial.EulerIdentity
-import Mathlib.Basic.Real.Basic
+public import Mathlib.RingTheory.MvPolynomial.EulerIdentity
+public import Mathlib.Basic.Real.Basic
 import Mathlib.Tactic.Ring
+
+@[expose] public section
 
 noncomputable section
 

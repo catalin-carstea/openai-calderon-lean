@@ -1,22 +1,19 @@
 # Package validation
 
-The 2,723 included solution, supporting and consumer sources are byte-identical to the released proof. Their contents and module paths were preserved during packaging. The release passed fresh isolated compilation, exact comparison of its approved statements and defining declarations, its frozen consumer check and fresh Lean kernel replay.
+The 1,496 proof and consumer sources from Leanflow check `bc163604` are byte-identical in this package. `Proof/CalderonN/CheckedLocalExtension.lean` is also byte-identical to the local solution of check `0d2e9641`. The local consumer uses that module path with the rest of its source unchanged. [Checked source hashes](provenance/checked-sources.json)
 
-The public package was additionally checked with the same pinned toolchain and upstream Lake comparator used by the reference repository.
+The validation used a fresh package checkout and the pinned Mathlib dependency cache. Lake rebuilt all 1,494 supporting modules, the global solution, and both consumer modules. The proof build completed with linter and deprecation warnings from the existing sources. It reported zero declarations using `sorry`. Each challenge was compiled separately with its one intentional open theorem.
 
 | Check | Result |
 | --- | --- |
-| `./check-challenge.sh` | PASS: independent statement, selected text and dependency pins agree |
-| `lake query --json +Consumer:transImports` | PASS: all 2,723 local solution modules resolve; the challenge is absent from that import graph |
-| `lake env lean -j1 Check.lean` | PASS: theorem, closed physical comparison and consumer use only the standard three axioms |
-| Upstream `lake comparator`, including fresh kernel replay | PASS: `Your solution is okay!` |
-| Local documentation links | PASS |
-| Released Lean source hashes | PASS: all 2,723 unchanged |
+| `./check-challenge.sh` | Passed for the three challenge files, frozen imports, and dependency pins |
+| `lake build` | Passed from fresh local build outputs |
+| `lake query` import graph | Passed for all three challenges and all solution entry points. The challenge definitions and solution definitions have independent import paths |
+| `lake env lean Check.lean` | Passed for the three results and four consumer theorems. Each uses only `propext`, `Quot.sound`, and `Classical.choice` |
+| `lake comparator --config ComparatorChallenges/Theorem11.json` | Passed with fresh Lean kernel replay in about 10 minutes |
+| `lake comparator --config ComparatorChallenges/Theorem31.json` | Passed with fresh Lean kernel replay in about 9 minutes |
+| `lake comparator --config ComparatorChallenges/Proposition53.json` | Passed with fresh Lean kernel replay in about 8 minutes |
 
-For package-specific validation, existing compiled artifacts of the unchanged released sources and the pinned dependency cache were reused. The independent public challenge was compiled and exported afresh. The stock comparator was run with its supported `--challenge-from-export` and `--solution-from-export` options: it compared the independent challenge, checked the permitted axioms and replayed the complete solution export in the Lean kernel. Kernel replay was not skipped. A second full clean compilation of the unchanged proof was not performed solely for packaging.
+The stock Lake comparator built and exported both sides inside bubblewrap for all three runs. Each reported `Lean default kernel accepts the solution` and `Your solution is okay!`. Each configuration checks the theorem type and its reachable definitions with an empty `definition_names` list.
 
-From a new checkout, follow the README's ordinary build and comparator commands. They create fresh local artifacts from the included sources; the package needs no private workflow or pre-existing project directories.
-
-The comparator configuration has an empty `definition_names` list, matching the reference setup. This permits no definition holes; definitions reachable from the selected theorem must agree with the independent challenge.
-
-The source archive contains no compiled objects, NDJSON exports, dependency caches, private workflow databases, review administration or chat metadata. `SHA256SUMS` identifies its public files.
+The archive contains the sources, independent challenges, frozen references, and dependency pins. [File checksums](../SHA256SUMS)

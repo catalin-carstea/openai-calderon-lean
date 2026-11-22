@@ -1,5 +1,9 @@
-import Proof.InversePerturbation
-import Mathlib.Tactic
+module
+
+public import Proof.InversePerturbation
+public import Mathlib.Tactic
+
+@[expose] public section
 
 noncomputable section
 set_option autoImplicit false
