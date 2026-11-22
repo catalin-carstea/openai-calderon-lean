@@ -1,0 +1,14 @@
+{
+  "challenge_module": "ComparatorChallenges.Lemma81",
+  "solution_module": "Proof.Manuscript.Lemma81",
+  "theorem_names": [
+    "CalderonPaper.lemma81"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "enable_nanoda": false
+}
