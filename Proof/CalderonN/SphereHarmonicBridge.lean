@@ -58,19 +58,33 @@ lemma polynomialSphereL2_inner (p q : MvPolynomial (Fin n) ℝ) :
     ContinuousMap.inner_toLp (unitSphereProbability n)
       (polynomialSphere p) (polynomialSphere q)
 
+theorem harmonicHomogeneous_smul_mem (n k : ℕ) (c : ℝ) (p : MvPolynomial (Fin n) ℝ) :
+    p ∈ {q | q.IsHomogeneous k ∧ laplacian q = 0} →
+      c • p ∈ {q | q.IsHomogeneous k ∧ laplacian q = 0} := by
+  intro hp
+  refine ⟨?_, ?_⟩
+  · simpa only [smul_eq_C_mul] using hp.1.C_mul c
+  · simpa only [smul_eq_C_mul] using (laplacian_C_mul c p).trans (by rw [hp.2, mul_zero])
+
+theorem harmonicHomogeneous_add_mem (n k : ℕ) {a b : MvPolynomial (Fin n) ℝ} :
+    a ∈ {q | q.IsHomogeneous k ∧ laplacian q = 0} →
+      b ∈ {q | q.IsHomogeneous k ∧ laplacian q = 0} →
+        (a + b).IsHomogeneous k ∧ laplacian (a + b) = 0 := by
+  intro hp hq
+  refine ⟨hp.1.add hq.1, ?_⟩
+  simp only [laplacian, map_add, Finset.sum_add_distrib]
+  change laplacian _ + laplacian _ = 0
+  rw [hp.2, hq.2, zero_add]
+
+theorem harmonicHomogeneous_zero_mem (n k : ℕ) :
+    (0 : MvPolynomial (Fin n) ℝ).IsHomogeneous k ∧
+      laplacian (0 : MvPolynomial (Fin n) ℝ) = 0 := ⟨(MvPolynomial.homogeneousSubmodule (Fin n) ℝ k).zero_mem, by simp [laplacian]⟩
+
 def harmonicHomogeneous (n k : ℕ) : Submodule ℝ (MvPolynomial (Fin n) ℝ) where
   carrier := {p | p.IsHomogeneous k ∧ laplacian p = 0}
-  zero_mem' := ⟨(MvPolynomial.homogeneousSubmodule (Fin n) ℝ k).zero_mem,
-    by simp [laplacian]⟩
-  add_mem' hp hq := ⟨hp.1.add hq.1, by
-    change laplacian (_ + _) = 0
-    simp only [laplacian, map_add, Finset.sum_add_distrib]
-    change laplacian _ + laplacian _ = 0
-    rw [hp.2, hq.2, zero_add]⟩
-  smul_mem' c p hp := by
-    refine ⟨?_, ?_⟩
-    · simpa only [smul_eq_C_mul] using hp.1.C_mul c
-    · simpa only [smul_eq_C_mul] using laplacian_C_mul c p |>.trans (by rw [hp.2, mul_zero])
+  add_mem' := @harmonicHomogeneous_add_mem n k
+  zero_mem' := harmonicHomogeneous_zero_mem n k
+  smul_mem' c p hp := harmonicHomogeneous_smul_mem n k c p hp
 
 def harmonicSphereSubspace (n : ℕ) [NeZero n] (k : ℕ) : Submodule ℝ (SphereL2 n) :=
   (harmonicHomogeneous n k).map polynomialSphereL2

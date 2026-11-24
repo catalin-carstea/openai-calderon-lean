@@ -1,0 +1,13 @@
+name = "calderon_frozen_statements"
+defaultTargets = ["FrozenStatements"]
+srcDir = "Source"
+
+[[require]]
+name = "mathlib"
+git = "https://github.com/leanprover-community/mathlib4.git"
+rev = "f6090c7095e1e56b3464c1daba5f24631f1290d2"
+
+[[lean_lib]]
+name = "FrozenStatements"
+roots = ["ComparatorChallenges", "Proof"]
+globs = ["ComparatorChallenges.+", "Proof.+"]

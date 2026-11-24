@@ -1,8 +1,24 @@
 # Package validation
 
-## Original release
+## Independent challenge workspace
 
-The 1,496 proof and consumer sources from Leanflow check `bc163604` are reproduced byte for byte in this package. The original global solution now lives at `Proof/Manuscript/AnisotropicUniqueness.lean`, and `Solution.lean` re-exports it. `Proof/CalderonN/CheckedLocalExtension.lean` is also byte-identical to the local solution of check `0d2e9641`. The local consumer uses that module path with the rest of its source unchanged. [Checked source hashes](provenance/checked-sources.json)
+`./check-challenge.sh` validates the frozen source inventory, its contents, and the dependency pins. `./check-comparator.sh` rebuilds the challenge modules in their own Lake workspace. It exports the selected challenge and solution independently and passes the exports to the pinned stock Lake Comparator. The default checks all 24 manuscript statements together. A selector checks one manuscript statement and its required supporting theorem types. [Statement index](../README.md#manuscript-statements)
+
+| Check | Result |
+| --- | --- |
+| `./check-challenge.sh` | Passed for the complete frozen workspace, aggregate configuration, selectors, and pins |
+| `lake build` | Passed for the proof and application modules |
+| `lake env lean Check.lean` | Passed for the 24 numbered results and six consumer theorems, using only the three permitted axioms |
+| `./check-comparator.sh` | Passed for all 24 numbered results and 368 supporting theorem statements in one Lean kernel replay |
+| `./check-comparator.sh Lemma62` | Passed with fresh Lean kernel replay |
+
+The final frozen export also passed stock Comparator’s statement, definition, and axiom checks against the exact solution export accepted by the kernel.
+
+The earlier Leanflow source hashes below record the first release. The comparator update factors out proof fields in `Proof/CalderonN/AngularComponentData.lean` and `Proof/CalderonN/SphereHarmonicBridge.lean` so the frozen definitions can refer to explicitly named certificates. [Current file hashes](../SHA256SUMS)
+
+## Original release (historical)
+
+The first release reproduced all 1,496 proof and consumer sources from Leanflow check `bc163604` byte for byte. The original global solution now lives at `Proof/Manuscript/AnisotropicUniqueness.lean`, and `Solution.lean` re-exports it. `Proof/CalderonN/CheckedLocalExtension.lean` is also byte-identical to the local solution of check `0d2e9641`. The local consumer uses that module path with the rest of its source unchanged. [Checked source hashes](provenance/checked-sources.json)
 
 The validation used a fresh package checkout and the pinned Mathlib dependency cache. Lake rebuilt all 1,494 supporting modules, the global solution, and both consumer modules. The proof build completed with linter and deprecation warnings from the existing sources. It reported zero declarations using `sorry`. Each challenge was compiled separately with its one intentional open theorem.
 
@@ -20,7 +36,7 @@ The stock Lake comparator built and exported both sides inside bubblewrap for al
 
 The archive contains the sources, independent challenges, frozen references, and dependency pins. [File checksums](../SHA256SUMS)
 
-## Standalone manuscript checks
+## Standalone manuscript checks (historical)
 
 The Theorem 1.1 comparator was rerun successfully after the proof moved to its shared module. It still checks through `Solution.lean`.
 

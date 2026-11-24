@@ -11,7 +11,3 @@ rev = "f6090c7095e1e56b3464c1daba5f24631f1290d2"
 name = "OpenAICalderon"
 roots = ["Proof", "Solution", "Consumer", "Applications"]
 globs = ["Proof.+", "Solution", "Consumer", "Applications.+"]
-
-[[lean_lib]]
-name = "ComparatorChallenges"
-globs = ["ComparatorChallenges.+"]

@@ -41,6 +41,21 @@ structure AngularComponentData {Y : Set (X dim)} {g : (MetricField dim)} {e : (F
 namespace AngularModelData
 variable {Y : Set (X dim)} {g : (MetricField dim)} {e : (Frame dim)} {φ : (Field dim)} {E : HarmonicTestExpansion Y g e φ} {r : (X dim) → ℝ}
 
+/-- Coordinate identity for the real angular component. -/
+theorem realComponent_coordinatesEq (k : ℕ) (x : X dim) :
+    polynomialSphereL2 (finitePolynomialField (E.basis k) (E.realCoefficients k) x) =
+      (harmonicProjection (k + 1)
+        (ambientSphereL2 (fun p => Complex.reCLM (E.representative p))
+          (Complex.reCLM.contDiff.comp E.representativeSmooth) x)).val := by
+  simpa only [Complex.reCLM_apply] using E.realCoordinates k x
+
+/-- Zero-mode identity for the real angular component. -/
+theorem realComponent_zeroDegree (x : X dim) :
+    harmonicProjection 0
+      (ambientSphereL2 (fun p => Complex.reCLM (E.representative p))
+        (Complex.reCLM.contDiff.comp E.representativeSmooth) x) = 0 := by
+  simpa only [Complex.reCLM_apply] using E.zeroDegreeReal x
+
 def realComponent (D : AngularModelData E r) : AngularComponentData E r Complex.reCLM where
   dimensionBound := D.dimensionBound
   horizontalRepresentative := D.realHorizontal
@@ -53,8 +68,23 @@ def realComponent (D : AngularModelData E r) : AngularComponentData E r Complex.
   coordinates := E.realCoefficients
   coordinatesSmooth := E.realSmooth
   coordinatesSupport := E.realSupport
-  coordinatesEq := by intro k x; simpa only [Complex.reCLM_apply] using E.realCoordinates k x
-  zeroDegree := by intro x; simpa only [Complex.reCLM_apply] using E.zeroDegreeReal x
+  coordinatesEq := realComponent_coordinatesEq
+  zeroDegree := realComponent_zeroDegree
+
+/-- Coordinate identity for the imag angular component. -/
+theorem imagComponent_coordinatesEq (k : ℕ) (x : X dim) :
+    polynomialSphereL2 (finitePolynomialField (E.basis k) (E.imagCoefficients k) x) =
+      (harmonicProjection (k + 1)
+        (ambientSphereL2 (fun p => Complex.imCLM (E.representative p))
+          (Complex.imCLM.contDiff.comp E.representativeSmooth) x)).val := by
+  simpa only [Complex.imCLM_apply] using E.imagCoordinates k x
+
+/-- Zero-mode identity for the imag angular component. -/
+theorem imagComponent_zeroDegree (x : X dim) :
+    harmonicProjection 0
+      (ambientSphereL2 (fun p => Complex.imCLM (E.representative p))
+        (Complex.imCLM.contDiff.comp E.representativeSmooth) x) = 0 := by
+  simpa only [Complex.imCLM_apply] using E.zeroDegreeImag x
 
 def imagComponent (D : AngularModelData E r) : AngularComponentData E r Complex.imCLM where
   dimensionBound := D.dimensionBound
@@ -68,8 +98,8 @@ def imagComponent (D : AngularModelData E r) : AngularComponentData E r Complex.
   coordinates := E.imagCoefficients
   coordinatesSmooth := E.imagSmooth
   coordinatesSupport := E.imagSupport
-  coordinatesEq := by intro k x; simpa only [Complex.imCLM_apply] using E.imagCoordinates k x
-  zeroDegree := by intro x; simpa only [Complex.imCLM_apply] using E.zeroDegreeImag x
+  coordinatesEq := imagComponent_coordinatesEq
+  zeroDegree := imagComponent_zeroDegree
 
 lemma realComponent_coordinates (D : AngularModelData E r) : D.realComponent.coordinates = E.realCoefficients := rfl
 lemma imagComponent_coordinates (D : AngularModelData E r) : D.imagComponent.coordinates = E.imagCoefficients := rfl
