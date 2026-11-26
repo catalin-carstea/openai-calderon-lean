@@ -1,7 +1,6 @@
 module
 
 public import Proof.Manuscript.ScalarConductivityDefs
-public import Proof.Manuscript.Lemma81Defs
 
 public section
 
@@ -14,8 +13,12 @@ namespace CalderonPaper
 theorem corollary13 {n : ℕ} [NeZero n] (hn : 3 ≤ n)
     {Ω : Set (EuclideanSpace ℝ (Fin n))} (hΩ : IsOpen Ω)
     (hbounded : Bornology.IsBounded Ω) (hconn : IsConnected Ω)
+
+    -- Smooth model of the Euclidean closure.
     [ChartedSpace (EuclideanHalfSpace n) ↥(closure Ω)]
     [IsManifold (𝓡∂ n) ∞ ↥(closure Ω)] (D : EuclideanClosure Ω)
+
+    -- Patch and strictly positive conductivities.
     {Γ : Set ↥(frontier Ω)} (hΓ : IsOpen Γ) (hΓne : Γ.Nonempty)
     {γ₁ γ₂ : EuclideanSpace ℝ (Fin n) → ℝ}
     (hγ₁ : SmoothThrough (closure Ω) γ₁) (hγ₂ : SmoothThrough (closure Ω) γ₂)

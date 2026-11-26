@@ -1,8 +1,6 @@
 module
 
 public import Proof.Manuscript.ScalarElliptic
-public import Proof.CalderonN.Coordinates
-public import Proof.CalderonN.ProductMetricHessian
 
 public section
 
@@ -20,6 +18,8 @@ theorem proposition33
     (hD₁ : IsOpen D₁) (hD₂ : IsOpen D₂)
     (L₁₀ L₂₀ : ScalarElliptic n)
     (hL₁₀ : L₁₀.SmoothOn D₁) (hL₂₀ : L₂₀.SmoothOn D₂)
+
+    -- Phase and strict Hessian condition at the base point.
     {U : Set ((X n) × (X n))} (hU : IsOpen U) (hUD : U ⊆ D₁ ×ˢ D₂)
     (z₀ : (X n) × (X n)) (hz₀ : z₀ ∈ U)
     (ρ₀ : ((X n) × (X n)) → ℝ) (hρ : ContDiffOn ℝ ∞ ρ₀ U)
@@ -29,6 +29,8 @@ theorem proposition33
       IsOpen V ∧ z₀ ∈ V ∧ V ⊆ U ∧ 0 < ε ∧
       IsCompact K₁ ∧ IsCompact K₂ ∧ IsCompact K₃ ∧ IsCompact K₄ ∧
       let K := (K₁ ×ˢ K₂) ∪ (K₃ ×ˢ K₄)
+
+      -- Smooth families through the given operators and phase.
       let admissible := fun (L₁ L₂ : ℝ → ScalarElliptic n) (ρ : ℝ → ((X n) × (X n)) → ℝ) =>
         ScalarElliptic.SmoothFamilyOn L₁ D₁ ∧ ScalarElliptic.SmoothFamilyOn L₂ D₂ ∧
         ContDiffOn ℝ ∞ (fun q : ℝ × ((X n) × (X n)) => ρ q.1 q.2) (univ ×ˢ U) ∧
@@ -36,9 +38,13 @@ theorem proposition33
       let side := fun (ρ : ℝ → ((X n) × (X n)) → ℝ) (a : ℝ) => {z ∈ U | 0 < ρ a z}
       (∀ L₁ L₂ ρ, admissible L₁ L₂ ρ →
         ∀ᶠ a in 𝓝 (0 : ℝ), K ⊆ {z ∈ U | ε < ρ a z}) ∧
+
+      -- Continuation from the positive side.
       (∀ L₁ L₂ ρ, admissible L₁ L₂ ρ → ∀ᶠ a in 𝓝 (0 : ℝ), ∀ F,
         (L₁ a).ProductSolvesOn (L₂ a) (side ρ a) F →
         ∃ G, (L₁ a).ProductSolvesOn (L₂ a) V G ∧ EqOn G F (V ∩ side ρ a)) ∧
+
+      -- Derivative bounds from fixed compact source sets.
       ∀ H ⊆ V, IsCompact H → ∀ m : ℕ, ∃ C : ℝ, 0 ≤ C ∧
         ∀ L₁ L₂ ρ, admissible L₁ L₂ ρ →
         ∀ᶠ a in 𝓝 (0 : ℝ), ∀ F, (L₁ a).ProductSolvesOn (L₂ a) (side ρ a) F →

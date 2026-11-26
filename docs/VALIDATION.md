@@ -1,5 +1,9 @@
 # Package validation
 
+## Readable frozen statements
+
+All 24 revised statement modules compiled in the frozen workspace. Their elaborated theorem types matched the corresponding types at commit `a788e2b` exactly. The aggregate Comparator accepted the revised package in a fresh Lean kernel replay. The statement files use 56 direct import lines, down from 1,417. The review guide links to the pinned manuscript, frozen Lean declarations, and supporting definitions. [Review guide](statement/REVIEW.md)
+
 ## Independent challenge workspace
 
 `./check-challenge.sh` validates the frozen source inventory, its contents, and the dependency pins. `./check-comparator.sh` rebuilds the challenge modules in their own Lake workspace. It exports the selected challenge and solution independently and passes the exports to the pinned stock Lake Comparator. The default checks all 24 manuscript statements together. A selector checks one manuscript statement and its required supporting theorem types. [Statement index](../README.md#manuscript-statements)

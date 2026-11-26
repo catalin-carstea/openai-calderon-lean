@@ -1,7 +1,6 @@
 module
 
 public import Proof.CalderonN.Chart
-public import Proof.CalderonN.Coordinates
 
 public section
 
@@ -15,10 +14,14 @@ theorem localMetricExtension
     {n : ℕ} (hn : 3 ≤ n)
     {Ω W : Set (X n)} (hΩ : IsOpen Ω) (hW : IsOpen W) (hWΩ : W ⊆ Ω)
     (hside : ContainsSmoothSide Ω W)
+
+    -- Metric and Green data in the common chart.
     {g₁ g₂ : MetricField n} (hg₁ : SmoothMetric Ω g₁) (hg₂ : SmoothMetric Ω g₂)
     (hchart₁ : HarmonicCoordinates Ω g₁) (hchart₂ : HarmonicCoordinates Ω g₂)
     {G₁ G₂ : X n × X n → ℝ} (hG₁ : GreenGerm Ω g₁ G₁) (hG₂ : GreenGerm Ω g₂ G₂)
     (hmetric : EqOn g₁ g₂ W) (hgreen : EqOn G₁ G₂ (OffDiagonal W))
+
+    -- Paired harmonic functions and their Hessian span.
     {m : ℕ} {u₁ u₂ : Fin m → X n → ℝ}
     (hu₁ : ∀ a, Harmonic Ω g₁ (u₁ a)) (hu₂ : ∀ a, Harmonic Ω g₂ (u₂ a))
     (hpairs : ∀ a, EqOn (u₁ a) (u₂ a) W) (hspan : HessianSpanning g₁ u₁) :

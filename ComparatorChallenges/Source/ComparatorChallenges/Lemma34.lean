@@ -1,8 +1,6 @@
 module
 
 public import Proof.Manuscript.ScalarElliptic
-public import Proof.CalderonN.Coordinates
-public import Proof.CalderonN.ProductMetricHessian
 
 public section
 
@@ -22,11 +20,15 @@ theorem lemma34
     (hchart : B ×ˢ Ioo lo hi ⊆ e.target)
     {D₁ D₂ : Set (X n)} (hD₁ : IsOpen D₁) (hD₂ : IsOpen D₂)
     (hchartD : e.symm '' (B ×ˢ Ioo lo hi) ⊆ D₁ ×ˢ D₂)
+
+    -- Initial region containing the top and lateral boundary.
     {S : Set ((X n) × (X n))} (hS : IsOpen S) (hSD : S ⊆ D₁ ×ˢ D₂)
     (htop : e.symm '' (B ×ˢ Ico amax hi) ⊆ S)
     (hside : e.symm '' ((B \ interior B) ×ˢ Icc amin amax) ⊆ S)
     (hup : ∀ z ∈ B, ∀ s t : ℝ, s ∈ Ioo lo hi → t ∈ Ioo lo hi →
       s ≤ t → e.symm (z, s) ∈ S → e.symm (z, t) ∈ S)
+
+    -- Operators and phases along the sweep.
     (L₁₀ L₂₀ : ScalarElliptic n)
     (hL₁₀ : L₁₀.SmoothOn D₁) (hL₂₀ : L₂₀.SmoothOn D₂)
     (ρ : ℝ → ((X n) × (X n)) → ℝ)
@@ -41,9 +43,13 @@ theorem lemma34
       let admissible := fun (L₁ L₂ : ℝ → ScalarElliptic n) =>
         ScalarElliptic.SmoothFamilyOn L₁ D₁ ∧ ScalarElliptic.SmoothFamilyOn L₂ D₂ ∧
         L₁ 0 = L₁₀ ∧ L₂ 0 = L₂₀
+
+      -- Continuation of the smooth family.
       (∀ L₁ L₂, admissible L₁ L₂ → ∀ᶠ s in 𝓝 (0 : ℝ), ∀ F,
         (L₁ s).ProductSolvesOn (L₂ s) S F →
         ∃ G, (L₁ s).ProductSolvesOn (L₂ s) O G ∧ EqOn G F S) ∧
+
+      -- Uniform bounds from compact data in the initial region.
       ∀ K ⊆ O, IsCompact K → ∀ m : ℕ, ∃ (K₀ : Set ((X n) × (X n))) (C : ℝ),
         IsCompact K₀ ∧ K₀ ⊆ S ∧ 0 ≤ C ∧
         ∀ L₁ L₂, admissible L₁ L₂ →

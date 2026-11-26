@@ -14,6 +14,8 @@ theorem corollary12 {n : ℕ} [NeZero n] (hn : 3 ≤ n)
     {M : Type*} [TopologicalSpace M] [T2Space M] [CompactSpace M] [ConnectedSpace M]
     [ChartedSpace (EuclideanHalfSpace n) M] [IsManifold (𝓡∂ n) ∞ M]
     [MeasurableSpace M] [BorelSpace M]
+
+    -- Full boundary, with its metric volume and energy data.
     (hBoundary : ((𝓡∂ n).boundary M).Nonempty)
     {g₁ g₂ : SmoothMetric n M} {μ₁ μ₂ : Measure M}
     (hμ₁ : IsMetricVolume g₁ μ₁) (hμ₂ : IsMetricVolume g₂ μ₂)

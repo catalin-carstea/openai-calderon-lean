@@ -1,15 +1,6 @@
 module
 
 public import Proof.Manuscript.MovingTraceSymbols
-public import Proof.CalderonN.ActualMovingTraceAdjoint
-public import Proof.CalderonN.Chart
-public import Proof.CalderonN.Coercivity
-public import Proof.CalderonN.Coordinates
-public import Proof.CalderonN.GreenCross
-public import Proof.CalderonN.MovingBallFamilies
-public import Proof.CalderonN.MovingGreenFluxDensity
-public import Proof.CalderonN.MovingTrace
-public import Proof.CalderonN.SphereFrame
 
 public section
 
@@ -27,6 +18,8 @@ theorem lemma51 {dim : ℕ} [NeZero dim] [Nontrivial (Fin dim)]
     {Y Ω : Set (X dim)} (hY : IsOpen Y) (hΩ : IsOpen Ω)
     (hComp : IsCompact (closure Y)) (hSub : closure Y ⊆ Ω)
     {γ g₁ g₂ : ℝ → MetricField dim}
+
+    -- Smooth families of metrics.
     (hγ : ∀ lam ∈ Icc (0 : ℝ) 1, SmoothMetric univ (γ lam))
     (hg₁ : ∀ lam ∈ Icc (0 : ℝ) 1, SmoothMetric univ (g₁ lam))
     (hg₂ : ∀ lam ∈ Icc (0 : ℝ) 1, SmoothMetric univ (g₂ lam))
@@ -36,6 +29,8 @@ theorem lemma51 {dim : ℕ} [NeZero dim] [Nontrivial (Fin dim)]
     {e : ℝ → Frame dim} (he : ∀ i, ContDiff ℝ ∞ (fun q : ℝ × X dim => e q.1 q.2 i))
     {K : ℝ} (hK : 0 < K)
     {m : ℕ} {M : Fin (m + 1) → ℝ}
+
+    -- Uniform background and normal-coordinate hypotheses.
     (hbg : ∀ lam ∈ Icc (0 : ℝ) 1, Background Ω K M (γ lam) (g₁ lam) (g₂ lam) (e lam))
     {E : ℝ → X dim × X dim → X dim} (hE : ContDiff ℝ ∞ (fun q : ℝ × (X dim × X dim) => E q.1 q.2))
     {ρ : ℝ} (hρ : 0 < ρ)

@@ -1,20 +1,9 @@
 module
 
-public import Proof.CalderonN.ChartNormalization
-public import Proof.CalderonN.GreenCross
-public import Proof.CalderonN.GreenDilation
-public import Proof.CalderonN.ConformalDepth
 public import Proof.CalderonN.CylinderCutoff
 public import Proof.CalderonN.NormalInverse
 public import Proof.CalderonN.Radius
-public import Proof.CalderonN.MovingTrace
 public import Proof.CalderonN.MovingSphere.RadiusSeed
-public import Proof.CalderonN.Chart
-public import Proof.CalderonN.Coordinates
-public import Proof.CalderonN.DilatedGreenBounds
-public import Proof.CalderonN.DilationConnection
-public import Proof.CalderonN.DilationHarmonic
-public import Proof.CalderonN.FixedTube.Initialization
 
 public section
 
@@ -31,17 +20,23 @@ theorem proposition42
     {n : ℕ} [NeZero n] (hn : 3 ≤ n) (normal : I n)
     {Ω W : Set (X n)} (hΩ : IsOpen Ω) (hW : IsOpen W) (hWΩ : W ⊆ Ω)
     (hside : ContainsAlignedSide normal Ω W)
+
+    -- Common-side metric and Green data.
     {g₁ g₂ : MetricField n} (hg₁ : SmoothMetric Ω g₁) (hg₂ : SmoothMetric Ω g₂)
     (h₁ : g₁ 0 = 1) (h₂ : g₂ 0 = 1)
     {G₁ G₂ : (X n) × (X n) → ℝ} (hG₁ : GreenGerm Ω g₁ G₁) (hG₂ : GreenGerm Ω g₂ G₂)
     (hmetric : EqOn g₁ g₂ W) (hgreen : EqOn G₁ G₂ (OffDiagonal W)) :
+
+    -- Fixed cylinder and conformal reference.
     let Y := coordinateCylinder normal
-    let Z := closedBall (0 : X n) (5/2)
+    let Z := closedBall (0 : X n) (5 / 2)
     let t := conformalDepth normal 4
     let γ := conformalReference (depthScale normal 4) g₁
+
+    -- Normal-coordinate family, followed by the continuation data.
     ∃ (ρ tb lam₀ : ℝ) (E : ℝ → (X n) × (X n) → (X n)),
       0 < ρ ∧ 0 < tb ∧ 0 < lam₀ ∧ ContDiff ℝ ∞ (fun q : ℝ × ((X n) × (X n)) => E q.1 q.2) ∧
-      (∀ y, t y ≤ 3 * tb → parabolicHeight normal y < 1/4) ∧
+      (∀ y, t y ≤ 3 * tb → parabolicHeight normal y < 1 / 4) ∧
       (∀ lam ∈ Icc (-lam₀) lam₀, NormalCoordinates Z (ball (0 : X n) 3)
         (γ lam) (E lam) (fun _ => ρ)) ∧
       ∃ (pmin : ℕ) (εmax : ℕ → ℝ) (Rmax : ℕ → ℝ → ℝ),

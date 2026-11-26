@@ -1,24 +1,10 @@
 module
 
 public import Proof.Manuscript.TransferDensity
-public import Proof.CalderonN.ChartNormalization
-public import Proof.CalderonN.GreenCross
-public import Proof.CalderonN.GreenDilation
-public import Proof.CalderonN.ConformalDepth
 public import Proof.CalderonN.CylinderCutoff
-public import Proof.CalderonN.NormalInverse
 public import Proof.CalderonN.Radius
 public import Proof.CalderonN.MovingSphere.RadiusSeed
 public import Proof.CalderonN.SmoothMetricFrame
-public import Proof.CalderonN.Chart
-public import Proof.CalderonN.Coordinates
-public import Proof.CalderonN.DilatedGreenBounds
-public import Proof.CalderonN.DilationConnection
-public import Proof.CalderonN.DilationHarmonic
-public import Proof.CalderonN.FixedTube.Initialization
-public import Proof.CalderonN.MovingTrace
-public import Proof.CalderonN.NormalGreenFlux
-public import Proof.CalderonN.SphereFrame
 
 public section
 
@@ -34,10 +20,14 @@ theorem proposition43
     {n : ℕ} [NeZero n] [Nontrivial (Fin n)] (hn : 3 ≤ n) (normal : I n)
     {Ω W : Set (X n)} (hΩ : IsOpen Ω) (hW : IsOpen W) (hWΩ : W ⊆ Ω)
     (hside : ContainsAlignedSide normal Ω W)
+
+    -- Common-side metric and Green data.
     {g₁ g₂ : MetricField n} (hg₁ : SmoothMetric Ω g₁) (hg₂ : SmoothMetric Ω g₂)
     (hchart₁ : HarmonicCoordinates Ω g₁) (hchart₂ : HarmonicCoordinates Ω g₂)
     {G₁ G₂ : (X n) × (X n) → ℝ} (hG₁ : GreenGerm Ω g₁ G₁) (hG₂ : GreenGerm Ω g₂ G₂)
     (hmetric : EqOn g₁ g₂ W) (hgreen : EqOn G₁ G₂ (OffDiagonal W))
+
+    -- Paired harmonic functions.
     {a : ℕ} {u₁ u₂ : Fin a → X n → ℝ}
     (hu₁ : ∀ i, Harmonic Ω g₁ (u₁ i)) (hu₂ : ∀ i, Harmonic Ω g₂ (u₂ i))
     (hpair : ∀ i, EqOn (u₁ i) (u₂ i) W)
@@ -46,16 +36,18 @@ theorem proposition43
     (hE : ContDiff ℝ ∞ (fun q : ℝ × ((X n) × (X n)) => E q.1 q.2))
     {lam₀ : ℝ} (hlam₀ : 0 < lam₀)
     (hNormal : ∀ lam ∈ Icc (-lam₀) lam₀,
-      NormalCoordinates (closedBall (0 : X n) (5/2)) (ball (0 : X n) 3)
+      NormalCoordinates (closedBall (0 : X n) (5 / 2)) (ball (0 : X n) 3)
         (conformalReference (depthScale normal 4) g₁ lam) (E lam) (fun _ => ρ))
     (hRadius : ∀ δ ∈ Ioc (0 : ℝ) 1, ∀ y ∈ coordinateCylinder normal,
       shrinkingRadius R p (conformalDepth normal 4) δ y ≤ ρ / 2)
-    (ht : ∀ y, conformalDepth normal 4 y ≤ 3 * tb → parabolicHeight normal y < 1/4)
+    (ht : ∀ y, conformalDepth normal 4 y ≤ 3 * tb → parabolicHeight normal y < 1 / 4)
     {d : ℝ} (hd : 0 < d)
+
+    -- One continued kernel supplies the moving-sphere data.
     (mixedKernel : ℝ → ℝ → (X n) × (X n) → ℝ)
     (continuation :
       let Y := interior (coordinateCylinder normal)
-      let Z := closedBall (0 : X n) (5/2)
+      let Z := closedBall (0 : X n) (5 / 2)
       let t := conformalDepth normal 4
       let γ := conformalReference (depthScale normal 4) g₁
       let r := shrinkingRadius R p t
@@ -93,7 +85,7 @@ theorem proposition43
         ∃ (O : Set ((X n) × (X n))) (ψ : (X n) × (X n) → ℝ),
           let G := mixedKernel lam δ
           let T := densityValue (E lam) e (r δ) ψ
-          let N := normalPairDomain (interior (closedBall (0 : X n) (5/2))) (γ lam) ρ (E lam)
+          let N := normalPairDomain (interior (closedBall (0 : X n) (5 / 2))) (γ lam) ρ (E lam)
           IsOpen O ∧ ProductSolutionOn q₁ q₂ O G ∧
           lowerNormalSeed normal N ⊆ O ∧ EqOn G (dilatedInitialGreen W G₁ G₂ lam) (lowerNormalSeed normal N) ∧
           (∀ w ∈ bundle Y (γ lam), (endpoint (E lam) (r δ) w, w.1) ∈ O) ∧

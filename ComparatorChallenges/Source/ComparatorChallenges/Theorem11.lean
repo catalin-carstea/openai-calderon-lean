@@ -14,7 +14,11 @@ theorem smoothAnisotropicUniqueness {n : ℕ} [NeZero n] (hn : 3 ≤ n)
     {M : Type*} [TopologicalSpace M] [T2Space M] [CompactSpace M] [ConnectedSpace M]
     [ChartedSpace (EuclideanHalfSpace n) M] [IsManifold (𝓡∂ n) ∞ M]
     [MeasurableSpace M] [BorelSpace M]
+
+    -- Measured boundary patch.
     {Γ : Set ((𝓡∂ n).boundary M)} (hΓ : IsOpen Γ) (hΓne : Γ.Nonempty) (hΓproper : Γ ≠ univ)
+
+    -- Metric volumes and the patch energy data.
     {g₁ g₂ : SmoothMetric n M} {μ₁ μ₂ : Measure M}
     (hμ₁ : IsMetricVolume g₁ μ₁) (hμ₂ : IsMetricVolume g₂ μ₂)
     (hEnergy : PatchEnergyEqual g₁ g₂ μ₁ μ₂ Γ) :

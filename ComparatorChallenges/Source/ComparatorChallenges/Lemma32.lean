@@ -1,7 +1,6 @@
 module
 
 public import Proof.Manuscript.ScalarElliptic
-public import Proof.CalderonN.Coordinates
 
 public section
 
@@ -21,9 +20,13 @@ theorem lemma32
     (hO₁ : IsOpen O₁) (hO₂ : IsOpen O₂)
     (hS₁D : closure S₁ ⊆ D₁) (hS₂D : closure S₂ ⊆ D₂)
     (hO₁D : closure O₁ ⊆ D₁) (hO₂D : closure O₂ ⊆ D₂)
+
+    -- Interpolation exponents and their strict margin.
     {C₁ C₂ γ₁ γ₂ : ℝ} (hC₁ : 0 < C₁) (hC₂ : 0 < C₂)
     (hγ₁ : γ₁ ∈ Ioo (0 : ℝ) 1) (hγ₂ : γ₂ ∈ Ioo (0 : ℝ) 1)
     (hmargin : 1 < γ₁ + γ₂) :
+
+    -- Extension and bounds for the given operators.
     (∀ L₁ L₂ : ScalarElliptic n,
       L₁.SmoothOn D₁ → L₂.SmoothOn D₂ →
       L₁.Interpolates D₁ S₁ O₁ C₁ γ₁ → L₂.Interpolates D₂ S₂ O₂ C₂ γ₂ →
@@ -32,6 +35,8 @@ theorem lemma32
         ∃ G, CrossExtension L₁ L₂ S₁ S₂ O₁ O₂ F G ∧
           ∀ K ⊆ O₁ ×ˢ O₂, IsCompact K → ∀ j : ℕ, ∀ z ∈ K,
             ‖iteratedFDeriv ℝ j G z‖ ≤ C K j * M) ∧
+
+    -- Bounds uniform under coefficient control and an exponent margin.
     (∀ ε : ℝ, 0 < ε → ∀ K ⊆ O₁ ×ˢ O₂, IsCompact K → ∀ m : ℕ, ∃ N : ℕ,
       ∀ a A : ℝ, 0 < a → 0 < A → ∃ C : ℝ, 0 ≤ C ∧
       ∀ δ₁ δ₂ : ℝ, δ₁ ∈ Ioo (0 : ℝ) 1 → δ₂ ∈ Ioo (0 : ℝ) 1 →

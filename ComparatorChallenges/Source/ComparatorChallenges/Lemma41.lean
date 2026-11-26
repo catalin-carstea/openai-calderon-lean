@@ -1,19 +1,9 @@
 module
 
-public import Proof.CalderonN.ConformalDepth
-public import Proof.CalderonN.CovariantHessian
 public import Proof.CalderonN.Radius
 public import Mathlib.Analysis.SpecialFunctions.Log.Deriv
-import Mathlib.Analysis.Calculus.Deriv.MeanValue
-import Mathlib.Analysis.SpecialFunctions.ExpDeriv
 import Mathlib.Tactic
-import Mathlib.Tactic.Positivity
-import Mathlib.Tactic.Ring
 public import Proof.CalderonN.CylinderCutoff
-public import Mathlib.Analysis.SpecialFunctions.Pow.Real
-public import Proof.CalderonN.Chart
-public import Proof.CalderonN.Coordinates
-public import Proof.CalderonN.DilationConnection
 
 public section
 
@@ -34,6 +24,8 @@ theorem lemma41
       let t := conformalDepth normal L
       let γ := conformalReference (depthScale normal L) g
       let r := fun R p => shrinkingRadius R p t
+
+      -- Derivative and small-radius estimates on the cylinder.
       (∃ lam₀ > 0,
         (∀ lam ∈ Ioo (0 : ℝ) lam₀, ∀ p : ℕ, 2 ≤ p → ∀ R > 0, ∀ δ ∈ Ioc (0 : ℝ) 1, ∀ y ∈ Y,
           let f := fun z => Real.log (r R p δ z)
@@ -46,6 +38,8 @@ theorem lemma41
         (∀ p : ℕ, 2 ≤ p → ∀ ε > 0, ∃ R₀ > 0,
           ∀ R ∈ Ioo (0 : ℝ) R₀, ∀ lam ∈ Ioo (0 : ℝ) lam₀, ∀ δ ∈ Ioc (0 : ℝ) 1, ∀ y ∈ Y,
             r R p δ y * (beta (γ lam) (r R p δ) y) ^ 2 ≤ ε)) ∧
+
+      -- Regularity and monotonicity in the radius parameters.
       ∀ p : ℕ, 2 ≤ p → ∀ R > 0,
         (∃ l, ∀ δ ∈ Ioc (0 : ℝ) 1,
           LipschitzOnWith l (fun y => (r R p δ y) ^ (1 / (p : ℝ))) Y) ∧
